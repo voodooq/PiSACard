@@ -6,9 +6,11 @@
          :style="{ 'background-position': 'center ' + scrollTop / 10 + 'px' }"></div>
     <div class="wm_bg_2"
          :style="{ 'background-position': 'center ' + scrollTop / 4 + 'px' }"></div>
+    <!--
     <footer class="tc powerdby">
       <div><span v-html="info"></span> {{ version }}</div>
     </footer>
+    -->
     <!-- 在线用户开始 -->
     <el-dialog title="在线用户"
                @open="userDialogOpen"
