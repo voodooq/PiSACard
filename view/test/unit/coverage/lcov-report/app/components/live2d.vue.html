@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/components/live2d.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">app/components</a> live2d.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+&lt;div&gt;
+    &lt;div class="l2d_body" v-show="showL2d" @mouseover="showCloseBtn=true" @mouseout="showCloseBtn=false"&gt;
+<span class="cstat-no" title="statement not covered" >        &lt;transition name="el-fade-in-linear"&gt;</span>
+            &lt;div class="l2d_message" v-show="messageDivShow"&gt;{{message}}&lt;/div&gt;
+        &lt;/transition&gt;
+        &lt;div class="l2d_close_btn" v-show="showCloseBtn" @mouseover="showCloseBtnMeth" @click="closeSprite"&gt;&lt;i class="el-icon-close"&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div<span class="cstat-no" title="statement not covered" > id="l2d"&gt;&lt;/div&gt;</span>
+    &lt;/div&gt;
+    &lt;div cl<span class="cstat-no" title="statement not covered" >ass="l2d_open_btn" v-show="!sho</span>wL2d&amp;&amp;loaded&amp;&amp;canShowL2d" @click="init"&gt;召唤雷姆&lt;/div&gt;
+&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >&lt;/template&gt;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >&lt;script&gt;</span>
+import * as PIXI from 'pixi.js'
+import '<span class="cstat-no" title="statement not covered" >../../../static/lib/live2d.min'</span>
+import '../../utils/live2d/index'
+import l2<span class="cstat-no" title="statement not covered" >dModel from '../../../stat</span>ic/live2d/rem/11.json';
+import {randomNum} from '../../utils/utils';
+<span class="cstat-no" title="statement not covered" ></span>
+export default {
+  data() <span class="fstat-no" title="function not covered" >{<span class="cstat-no" title="statement not covered" ></span></span>
+    return {
+        c<span class="fstat-no" title="function not covered" >anShowL2d:false,<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span></span></span></span></span></span></span>
+        loaded:false,
+<span class="cstat-no" title="statement not covered" >        showCloseBtn:false,</span>
+        l2dSprite:n<span class="fstat-no" title="function not covered" >ull,</span>
+<span class="cstat-no" title="statement not covered" >        renderer:null,</span>
+        showL2d:false,
+        message:'',
+        messageDivShow:false,
+        messageTimer:null,
+    }
+  },
+  mounted() {
+      this.$wikimoecard.l2dMassage = this.showMessage;
+      this.$wikimoecard.l2dMassageClose = this.closeMassage;
+      let pcW = window.screen.width;
+      if(pcW&gt;1366){
+          this.canShow<span class="fstat-no" title="function not covered" >L2d = tr</span>ue;
+<span class="cstat-no" title="statement not covered" >          let closeL2d = localStorage.getItem("closeL2d")</span> === 'true';
+<span class="cstat-no" title="statement not covered" >          if(closeL2d){</span>
+              this<span class="cstat-no" title="statement not covered" >.loaded = true;</span>
+<span class="cstat-no" title="statement not covered" >          }else{</span>
+<span class="cstat-no" title="statement not covered" >              this.init();</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+      }<span class="cstat-no" title="statement not covered" ></span>
+  },<span class="cstat-no" title="statement not covered" ></span>
+  methods: {
+      closeSprit<span class="cstat-no" title="statement not covered" >e(){</span>
+          this.l2dSprite.destroy(true);
+          this.renderer.destroy(true);
+          this.showL2d = false;
+          localStorage.setItem("closeL2d",'true');
+      },
+      showCloseBtnMeth(){<span class="fstat-no" title="function not covered" ></span>
+          th<span class="cstat-no" title="statement not covered" >is.showCloseBtn = true;</span>
+          th<span class="cstat-no" title="statement not covered" >is.showMessage('暂时隐藏雷姆，希望不久能再</span>见面呢！')
+      },<span class="cstat-no" title="statement not covered" ></span>
+      closeM<span class="cstat-no" title="statement not covered" >assage(){</span>
+          clearTimeout(this.messageTimer);
+          if(this.showL2d){<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            this.messageDivShow = fals</span>e;
+<span class="cstat-no" title="statement not covered" >            this.l2dSprite.startRandomMotionOnce('i</span>dle');
+          }
+      },<span class="fstat-no" title="function not covered" ></span>
+      showMe<span class="cstat-no" title="statement not covered" >ssage(text,noMotion){</span>
+          cl<span class="cstat-no" title="statement not covered" >earTimeout(this.messageTimer);</span>
+          if(thi<span class="cstat-no" title="statement not covered" >s.showL2d){</span>
+            this<span class="cstat-no" title="statement not covered" >.messageDivShow = true;</span>
+            if(!noMotion){
+                this.l2dSprite.startRandomMotionOnce('random');
+            }<span class="fstat-no" title="function not covered" ></span>
+            this.message<span class="cstat-no" title="statement not covered" > = te</span>xt;
+            this.messageTimer = setTimeout(()=&gt;{
+<span class="cstat-no" title="statement not covered" >                this.messageDivShow = false;</span>
+<span class="cstat-no" title="statement not covered" >            },8000)</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+      },<span class="cstat-no" title="statement not covered" ></span>
+      init(){<span class="cstat-no" title="statement not covered" ></span>
+          localStorage.setItem("closeL2d",'false');
+          this.l<span class="cstat-no" title="statement not covered" >oaded = false;</span>
+          const <span class="cstat-no" title="statement not covered" >renderer = new PIXI.Application<span class="fstat-no" title="function not covered" >({</span> width: 400, height: 520,transparent: true });</span>
+            document<span class="cstat-no" title="statement not covered" >.getElementById('l2d').appendC</span>hild(renderer.view);
+            const stage = new PIXI.Container();
+&nbsp;
+&nbsp;
+            const loade<span class="fstat-no" title="function not covered" >r = n</span>ew PIXI.Loader();
+            const live2dS<span class="cstat-no" title="statement not covered" >prite</span> = new PIXI.Live2DSprite(l2dModel, {
+            debugLog: false,
+<span class="cstat-no" title="statement not covered" >            randomMotion: false,</span>
+<span class="cstat-no" title="statement not covered" >            eyeBlink: false,</span>
+            // audioPlayer:<span class="cstat-no" title="statement not covered" > (...args) =&gt; console.log(...args)</span>
+<span class="cstat-no" title="statement not covered" >            });</span>
+            stage.addChi<span class="cstat-no" title="statement not covered" >ld(live2dSprite);</span>
+&nbsp;
+            // live2dSpri<span class="cstat-no" title="statement not covered" >te.y = -150;</span>
+            live2dSprite.adjust<span class="cstat-no" title="statement not covered" >Scale(0,0,0.7);</span>
+            live2dSprite.adjustTranslate(0, 0);
+            live2dSprite.startRandomMotion('idle');
+&nbsp;
+            live2dSprite.on('pointerdown', (evt) =&gt; {
+                const point = evt.data.global;
+<span class="cstat-no" title="statement not covered" >                let randomText = ["有什么事要吩咐</span>吗？", "那个……如果太过强硬，雷姆会不自觉长出角的！","如果一直这样的话，雷姆可是会生气的哦！", "要是能再温柔一点的话……"];
+                if (live2dSprite.hitTest('body', point.x, point.y)) {
+                    this.showMessage(randomText[randomNum(0,randomText.length-1)],true);
+<span class="cstat-no" title="statement not covered" >                    live2dSprite.startRandomMotio</span>nOnce('tap_body');
+<span class="cstat-no" title="statement not covered" >                }else if (live2dSprite.hitTest('</span>head', point.x, point.y)) {
+<span class="cstat-no" title="statement not covered" >                    this.showMessage(randomText[rand</span>omNum(0,randomText.length-1)],true);
+                    live2dSprite.startRandomMotionOnce('tap_head');
+<span class="cstat-no" title="statement not covered" >                }<span class="fstat-no" title="function not covered" ></span></span>
+            });<span class="cstat-no" title="statement not covered" ></span>
+            // live2dSprite.on('m<span class="cstat-no" title="statement not covered" >ousemove', (evt) =&gt; {</span>
+            //  <span class="cstat-no" title="statement not covered" >   const point = evt.data.global;</span>
+            //     l<span class="cstat-no" title="statement not covered" >ive2dSprite.setViewPoint(point.x, point.y);</span>
+            // });<span class="cstat-no" title="statement not covered" ></span>
+            this.l2dSpr<span class="cstat-no" title="statement not covered" >ite = live2dSprite;</span>
+            // 资源加载完<span class="cstat-no" title="statement not covered" >毕</span>
+            renderer<span class="cstat-no" title="statement not covered" >.stage.addChild(stage);</span>
+            this.renderer = renderer;
+            let loadTimer = setInterval(()=&gt;{
+                if(window.$l2dloaded){
+                    clearInterval(loadTimer);
+                    let now = (new Date()).getHours();
+                    let text = '';
+<span class="cstat-no" title="statement not covered" >                    if (now &gt; 23 || now &lt;= </span>5) {
+                        text = '夜深了，应该好好休息才是呀！';
+<span class="cstat-no" title="statement not covered" >                    } else if (now &gt; 5 &amp;&amp; no</span>w &lt;= 7) {
+<span class="cstat-no" title="statement not covered" >                        text = '早上好！一日</span>之计在于晨，美好的一天就要开始了呢！';
+                    } else i<span class="cstat-no" title="statement not covered" >f (now &gt; 7 &amp;<span class="fstat-no" title="function not covered" >&amp; </span>now &lt;= 11) {</span>
+<span class="cstat-no" title="statement not covered" >                        text = '上午好！今天也要努力抽到六星卡呢！';</span>
+<span class="cstat-no" title="statement not covered" >                    } else if (now &gt; 11 &amp;&amp; now</span> &lt;= 14) {
+                        text =<span class="cstat-no" title="statement not covered" > '中午了，今天的午饭好吃吗？';</span>
+                    } else if (<span class="cstat-no" title="statement not covered" >now</span> &gt; 14 &amp;&amp; now &lt;= 17) {
+<span class="cstat-no" title="statement not covered" >                        text = '午后很容易犯困呢！不过打起精神来六星卡正等着你呢！';</span>
+                    } el<span class="cstat-no" title="statement not covered" >se if (now &gt; 17 &amp;&amp; now &lt;=</span> 19) {
+                        tex<span class="cstat-no" title="statement not covered" >t = '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~~';</span>
+                    } el<span class="cstat-no" title="statement not covered" >se if (now &gt; 19 &amp;&amp; now &lt;= 21) {</span>
+                        tex<span class="cstat-no" title="statement not covered" >t = '晚上好，今天过得怎么样？';</span>
+                    } el<span class="cstat-no" title="statement not covered" >se if (now &gt; 21 &amp;&amp; now &lt;= 23</span>) {
+                        tex<span class="cstat-no" title="statement not covered" >t = '已经这么晚了呀，早点休息吧，晚安~~';</span>
+                    } el<span class="cstat-no" title="statement not covered" >se {</span>
+                        tex<span class="cstat-no" title="statement not covered" >t = '快来一起抽卡吧！';</span>
+                    }<span class="cstat-no" title="statement not covered" ></span>
+                    setTime<span class="cstat-no" title="statement not covered" >out(()=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >                        this.showMessage(text);</span>
+                    },100)<span class="cstat-no" title="statement not covered" ></span>
+                    this<span class="cstat-no" title="statement not covered" >.showL2d = true;</span>
+                    this.lo<span class="cstat-no" title="statement not covered" >aded = true;</span>
+                }<span class="cstat-no" title="statement not covered" ></span>
+            },20)
+      }<span class="cstat-no" title="statement not covered" ></span>
+  },
+}<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+&lt;/script&gt;<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+&lt;style&gt;<span class="cstat-no" title="statement not covered" ></span>
+.l2d_body{<span class="cstat-no" title="statement not covered" ></span>
+    position: fixed;
+    left: 8px;
+    bottom: 0;
+    z-index: 999;
+}
+.l2d_body canvas{
+    width: 200px;
+    height: 260px;
+}
+.l2d_message{
+    color: #fff;
+    box-sizing: border-box;
+    width: 200px;
+    height: auto;
+    margin: auto;
+    padding: 7px;
+    bottom: 260px;
+    left: 0px;
+<span class="cstat-no" title="statement not covered" >    text-align: center;<span class="cstat-no" title="statement not covered" ></span></span>
+    border: 2px solid rg<span class="cstat-no" title="statement not covered" >ba(75,127,199,0.9);</span>
+<span class="cstat-no" title="statement not covered" >    border-radius: 5px;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >    background-color: rgba(74, 59, 114</span>,0.9);
+    font-size: 13px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    overflow: hidden;
+    position: absolute;
+}
+.l2d_close_btn{
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    cursor: url(/static/cur/pointer.cur),pointer;
+    font-size: 18px;
+}
+.l2d_open_btn{
+    border: 2px solid rgba(75,127,199,0.9);
+    border-radius: 2px;
+    background-color: rgba(74, 59, 114,0.9);
+    padding: 2px 10px;
+    color: #fff;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    z-index: 999;
+    cursor: url(/static/cur/pointer.cur),pointer;
+}
+&lt;/style&gt;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

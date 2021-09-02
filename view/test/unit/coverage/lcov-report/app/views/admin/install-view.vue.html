@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/views/admin/install-view.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">app/views/admin</a> install-view.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+  &lt;div class="common_body"&gt;
+    &lt;h5 class="common_title"&gt;初始化安装&lt;/h5&gt;
+<span class="cstat-no" title="statement not covered" >    &lt;el-form ref="form" :model="form" label-width="180px"&gt;</span>
+      &lt;el-form-item label="管理员账号"&gt;
+        &lt;el-input
+          v-model="form.account"
+          p<span class="cstat-no" title="statement not covered" >laceholder="请设定管理员账号"</span>
+        &gt;&lt;/el-input&gt;
+<span class="cstat-no" title="statement not covered" >      &lt;/el-form-item&gt;</span>
+      &lt;el-form-it<span class="fstat-no" title="function not covered" >em la</span>bel="管理员密码"&gt;
+<span class="cstat-no" title="statement not covered" >        &lt;el-input</span>
+          v-model="form.password"
+          show-password
+          placeholder="请设定管理员密码"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="每日抽卡次数"&gt;
+        &lt;el-input
+          v-model="form.dailyChance"
+          placeholder="请设定每日抽卡次数"
+          type="number"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="邮件发送host"&gt;
+        &lt;el-input
+          v-model="form.smtpHost"
+          placeholder="请设定邮件发送host地址"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="邮件发送端口"&gt;
+        &lt;el-input
+          v-model="form.smtpPort"
+          placeholder="请设定邮件发送端口"
+          type="number"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="邮箱账户"&gt;
+        &lt;el-input
+          v-model="form.smtpAuthUser"
+          placeholde<span class="fstat-no" title="function not covered" >r="请设定邮箱</span>账户"
+<span class="cstat-no" title="statement not covered" >        &gt;&lt;/el-input&gt;</span>
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="邮箱密码"&gt;
+        &lt;el-input
+          v-model="form.sm<span class="fstat-no" title="function not covered" >tpAuthPass"</span>
+          show-pas<span class="cstat-no" title="statement not covered" >sword</span>
+          placeholder="请设定邮箱密码"
+<span class="cstat-no" title="statement not covered" >        &gt;&lt;/el-input&gt;<span class="fstat-no" title="function not covered" ></span></span>
+      &lt;/<span class="cstat-no" title="statement not covered" >el-form-item&gt;</span>
+      &lt;el-<span class="cstat-no" title="statement not covered" >form-item label="session"&gt;</span>
+        &lt;el-input
+          v-model="form.sessionSecret"
+          placeholder="用于session加密的字符串"
+        &gt;&lt;/el-input&gt;<span class="fstat-no" title="function not covered" ></span>
+      &lt;/el-form-ite<span class="cstat-no" title="statement not covered" >m&gt;</span>
+      &lt;el-form-item label="JWTSecret"&gt;
+        &lt;el-input
+          v-model="<span class="cstat-no" title="statement not covered" >form.JWTSecret"</span>
+<span class="cstat-no" title="statement not covered" >          placeholder="用于JWT加密字符串"<span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >        &gt;&lt;/el-input&gt;</span>
+      &lt;/<span class="cstat-no" title="statement not covered" >el-form-item&gt;</span>
+      &lt;el-<span class="cstat-no" title="statement not covered" >form-item label="机器人验证送的神秘碎片"&gt;</span>
+        &lt;el-input-number
+          v-model="form.robotCheckStar"
+          label="机器人验证通过后送的神秘碎片<span class="fstat-no" title="function not covered" >"</span>
+          :min<span class="cstat-no" title="statement not covered" >="1"</span>
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="低于该可疑度送神秘碎片"&gt;
+        &lt;e<span class="cstat-no" title="statement not covered" >l-input-number</span>
+          v-model="form.robotCheckCanGetStar"
+          label="机器人可疑度低于这个值送神秘碎片"
+          :min="1"
+        &gt;&lt;/el-input-numb<span class="fstat-no" title="function not covered" >er&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/el-form-item&gt;</span>
+      &lt;el-form-item label="挖矿得星星倍率"&gt;
+        &lt;el-input-number
+          v-model="form.deminingStarRatio"
+          label="挖矿获得星星的倍率"
+          :min="1"
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="挖矿得宝石倍率"&gt;
+        &lt;el-input-number
+          v-model="form.deminingItemRatio"
+          label="挖矿获得宝石的倍率"
+          :min="1"
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="制卡审核通过送的星星"&gt;
+        &lt;el-input-number
+          v-model="form.creatCardStar"
+          label="制卡审核通过后获得的星星"
+          :min="1"
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="单用户最多等待审核的制卡"&gt;
+        &lt;el-input-number
+          v-model="form.creatCardWait"
+          label="单用户最多等待审核的制卡"
+          :min="1"
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="使用市场卡种量限制"&gt;
+        &lt;el-input-number
+          v-model="form.useMarketCardCount"
+          label="集齐多少种卡牌后能使用市场"
+          :min="1"
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="竞技榜单结缘币基数"&gt;
+        &lt;el-input-number
+          v-model="form.battleRankGetItem"
+          label="竞技第一名额外获得结缘币的数量"
+          :min="1"
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="竞技榜单结缘币基数衰减"&gt;
+        &lt;el-input-number
+          v-model="form.battleRankGetItemDecay"
+          label="竞技榜单结缘币基数衰减"
+          :min="1"
+        &gt;&lt;/el-input-number&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="捐赠图片URL地址"&gt;
+        &lt;el-input
+          v-model="form.donateImgUrl"
+          placeholder="捐赠图片URL地址（选填）"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="制卡说明图片URL地址"&gt;
+        &lt;el-input
+          v-model="form.creatCardExplainUrl"
+          placeholder="制卡说明图片URL地址（选填）"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="加群链接"&gt;
+        &lt;el-input
+          v-model="form.QQunURL"
+          placeholder="加群链接（选填）"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="教程链接"&gt;
+        &lt;el-input
+          v-model="form.courseURL"
+          placeholder="教程链接（选填）"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="浏览器标签标题"&gt;
+        &lt;el-input
+          v-model="form.browserTitle"
+          placeholder="浏览器标签标题"
+        &gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="网站标题"&gt;
+        &lt;el-input v-model="form.siteTitle" placeholder="网站标题"&gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item&gt;
+        &lt;el-button type="primary" @click="onSubmit"&gt;安装&lt;/el-button&gt;
+        &lt;el-button @click="backIndex"&gt;返回首页&lt;/el-button&gt;
+      &lt;/el-form-item&gt;
+    &lt;/el-form&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+import { authApi } from "../../api";
+export default {
+  data() {
+    return {
+      form: {
+        account: "",
+        password: "",
+        dailyChance: "",
+        smtpHost: "",
+        smtpPort: "",
+        smtpAuthUser: "",
+        smtpAuthPass: "",
+        sessionSecret: "",
+        JWTSecret: "",
+        robotCheckStar: "25",
+        robotCheckCanGetStar: "25", //机器人可疑度低于这个值送星星
+        deminingStarRatio: "1", //挖矿获得星星的倍率
+        deminingItemRatio: "1", //挖矿获得宝石的倍率
+        creatCardStar: "100", //制卡审核通过后获得的星星
+        creatCardWait: "20", //单用户最多等待审核的制卡
+        useMarketCardCount: "30", //集齐多少种卡牌后能在市场交易
+        battleRankGetItem: "100", //竞技第一名额外获得结缘币的数量
+        battleRankGetItemDecay: "10", //后面陆续获得结缘币的衰减数量
+        donateImgUrl: "", //捐赠图片URL地址
+        creatCardExplainUrl: "", //制卡说明图片URL地址
+        QQunURL: "", //加群链接
+        courseURL: "", //教程链接
+        browserTitle: "维基萌抽卡", //浏览器标签标题
+        siteTitle: "维基萌抽卡" //网站标题
+      }
+    };
+  },
+  mounted() {
+    this.chekInstall();
+  },
+  methods: {
+    chekInstall() {
+      authApi.admincheckinstall().then(res =&gt; {
+        if (res.data.code != 1) {
+          this.$router.replace({ path: "/" });
+        }
+      });
+    },
+    onSubmit() {
+      // 校验数据
+      let params = { config: this.form };
+      authApi.admininstall(params).then(res =&gt; {
+        console.log(res);
+        if (res.data.code == 1) {
+          this.$alert("恭喜您，安装成功！", "提示", {
+            confirmButtonText: "确定",
+            showClose: false,
+            callback: action =&gt; {
+              this.$router.push({ path: "/" });
+            }
+          });
+        } else {
+          this.$message.error(res.data.msg);
+        }
+      });
+    },
+    backIndex() {
+      this.$router.push({ path: "/" });
+    }
+  }
+};
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="stylus" scoped&gt;&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

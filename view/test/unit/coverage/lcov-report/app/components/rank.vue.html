@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/components/rank.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">app/components</a> rank.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+  &lt;div class="wm_card_rank_body"
+       id="wmCardRankBody"
+<span class="cstat-no" title="statement not covered" >       v-if="changed &amp;&amp; rankData"</span>
+       @mouseenter="$wikimoecard.l2dMassage('这些排行榜中的大佬们真是太厉害了呢！')"&gt;
+    &lt;el-carousel :interval="4000"
+                 :type="card"
+<span class="cstat-no" title="statement not covered" >                 height="420p</span>x"
+                 :indicator-position="'outside'"
+<span class="cstat-no" title="statement not covered" >                 :arrow="'never'"</span>
+<span class="fstat-no" title="function not covered" >                 :trig</span>ger="'click'"
+<span class="cstat-no" title="statement not covered" >                 v-if="rankData.cardIndexCount.length&gt;=5"&gt;</span>
+      &lt;el-carousel-item&gt;
+        &lt;div class="wm_card_rank_item_box"
+             id="wmCardRankBox"&gt;
+          &lt;h5 class="wm_card_chiose_title"
+              id="wm_card_rank_title"&gt;卡牌收集排行榜&lt;/h5&gt;
+          &lt;p class="wm_card_rank_last_updata"&gt;
+            最后更新：<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;span cl</span>ass="wm_card_rank_last_time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
+          &lt;div class="wm_card_rank_list"&gt;
+            &lt;div cla<span class="fstat-no" title="function not covered" >ss="clea</span>rfix wm_card_rank_box"
+<span class="cstat-no" title="statement not covered" >                 v-for="(item,index) in rankData.card</span>IndexCount"
+                 v-bind:key="index"
+                 @click="watchInfo(item.md5)"&gt;
+              &lt;div class="fl wm_card_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;
+              &lt;div class<span class="fstat-no" title="function not covered" >="fl wm_ca</span>rd_rank_img"&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;img cla</span>ss="wm_card_get_list_avatar_pic"
+<span class="cstat-no" title="statement not covered" >                     :src="'/api/gravatar.png?md5='+item.md5"</span>
+<span class="cstat-no" title="statement not covered" >                     width="45"</span>
+                     height="45"&gt;
+<span class="cstat-no" title="statement not covered" >              &lt;/di</span>v&gt;
+              &lt;div class="fl wm_card_nickname_text"&gt;{{item.nickName}}&lt;/div&gt;
+              &lt;div class="fr wm_card_rank_point"&gt;{{item.cardIndexCount}}种卡牌&lt;/div&gt;
+            &lt;/div&gt;<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+      &lt;/el-ca<span class="cstat-no" title="statement not covered" >rousel-item&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+      &lt;el-car<span class="cstat-no" title="statement not covered" >ousel-item&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div class="wm</span>_card_rank_item_box"
+             id="wmDeminingRankBox"&gt;
+<span class="cstat-no" title="statement not covered" >          &lt;h5 class="wm_c</span>ard_chiose_title"
+              id="wm_card_rank_title"&gt;星星榜&lt;/h5&gt;
+          &lt;p class="wm_card_rank_last_updata"&gt;
+            最后更新：<span class="fstat-no" title="function not covered" ></span>
+            &lt;span<span class="cstat-no" title="statement not covered" > class="wm_card_rank_last_</span>time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+          &lt;/p&gt;<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          &lt;div cl</span>ass="wm_card_rank_list"&gt;
+            &lt;div class="clearfix wm_card_rank_box"
+                 v-for="(item,index) in rankData.star"
+                 v-bind:key="index"
+                 @click=<span class="fstat-no" title="function not covered" >"watchInfo</span>(item.md5)"&gt;
+<span class="cstat-no" title="statement not covered" >              &lt;div class="fl wm_card</span>_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;
+              &lt;div class="fl wm_card_rank_img"&gt;
+                &lt;img c<span class="fstat-no" title="function not covered" >lass="wm</span>_card_get_list_avatar_pic"
+<span class="cstat-no" title="statement not covered" >                     :s</span>rc="'/api/gravatar.png?md5='+item.md5"
+                     width="45"
+<span class="cstat-no" title="statement not covered" >                     height="45<span class="fstat-no" title="function not covered" >"&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >              &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;div class="fl wm_card_nickn</span>ame_text"&gt;{{item.nickName}}&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >              &lt;div class="fr wm_card_ra</span>nk_point"&gt;{{item.star|setBigNum}}颗星星&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/el-carousel-it<span class="fstat-no" title="function not covered" >em&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+      &lt;el-carousel-item&gt;
+        &lt;div c<span class="cstat-no" title="statement not covered" >lass="wm_card_rank</span>_item_box"
+<span class="cstat-no" title="statement not covered" >             id="wmDeminingRankBox"&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;h5 class="wm_card_chiose_title"</span>
+<span class="cstat-no" title="statement not covered" >              id="wm_card_rank_t</span>itle"&gt;掘星排行榜&lt;/h5&gt;
+<span class="cstat-no" title="statement not covered" >          &lt;p class="wm_card_ra</span>nk_last_updata"&gt;
+<span class="cstat-no" title="statement not covered" >            最后更新：<span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >            &lt;span class="wm_card_ra</span>nk_last_time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;div class="wm_card_rank_list"&gt;
+            &lt;div class="clearfix wm_card_rank_box"
+<span class="cstat-no" title="statement not covered" >                 v-for="(item,index) in rankData.deminingStarCount"</span>
+<span class="cstat-no" title="statement not covered" >                 v-bind:key="ind</span>ex"
+<span class="cstat-no" title="statement not covered" >                 @click="w</span>atchInfo(item.md5)"&gt;
+<span class="cstat-no" title="statement not covered" >              &lt;div cl<span class="fstat-no" title="function not covered" >as</span>s="fl wm_card_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;div class="fl wm_car</span>d_rank_img"&gt;
+                &lt;img class="wm_card_get_list_avatar_pic"
+                     :src="'/api/gravatar.png?md5='+item.md5"
+                     width="45"
+                     height="45"&gt;
+              &lt;/div&gt;
+              &lt;div class="<span class="fstat-no" title="function not covered" >fl wm_card_nic</span>kname_text"&gt;{{item.nickName}}&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >              &lt;div class="fr wm_card_rank_point"&gt;{{item.</span>deminingStarCount|setBigNum}}颗星星&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/el-carousel-item&gt;
+&nbsp;
+      &lt;el-carousel-item&gt;
+        &lt;div class="wm_card_rank_item_box"
+             id="wmScoreRankBox"&gt;
+          &lt;h5 class="wm_card_chiose_title"
+              id="wm_card_rank_title"&gt;竞技点排行榜&lt;/h5&gt;
+          &lt;p class="wm_card_rank_last_updata"&gt;
+            最后更新：
+            &lt;span class="wm_card_rank_last_time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;div class="wm_card_rank_list"&gt;
+            &lt;div class="clearfix wm_card_rank_box"
+                 v-for="(item,index) in rankData.score"
+                 v-bind:key="index"
+                 @click="watchInfo(item.md5)"&gt;
+              &lt;div class="fl wm_card_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;
+              &lt;div class="fl wm_card_rank_img"&gt;
+                &lt;img class="wm_card_get_list_avatar_pic"
+                     :src="'/api/gravatar.png?md5='+item.md5"
+                     width="45"
+                     height="45"&gt;
+              &lt;/div&gt;
+              &lt;div class="fl wm_card_nickname_text"&gt;{{item.nickName}}&lt;/div&gt;
+              &lt;div class="fr wm_card_rank_point"&gt;{{item.score}}点&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/el-carousel-item&gt;
+&nbsp;
+      &lt;el-carousel-item&gt;
+        &lt;div class="wm_card_rank_item_box"
+             id="wmDeminingRankBox"&gt;
+          &lt;h5 class="wm_card_chiose_title"
+              id="wm_card_rank_title"&gt;猜卡榜&lt;/h5&gt;
+          &lt;p class="wm_card_rank_last_updata"&gt;
+            最后更新：
+            &lt;span class="wm_card_rank_last_time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;div class="wm_card_rank_list"&gt;
+            &lt;div class="clearfix wm_card_rank_box"
+                 v-for="(item,index) in rankData.guessCardCount"
+                 v-bind:key="index"
+                 @click="watchInfo(item.md5)"&gt;
+              &lt;div class="fl wm_card_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;
+              &lt;div class="fl wm_card_rank_img"&gt;
+                &lt;img class="wm_card_get_list_avatar_pic"
+                     :src="'/api/gravatar.png?md5='+item.md5"
+                     width="45"
+                     height="45"&gt;
+              &lt;/div&gt;
+              &lt;div class="fl wm_card_nickname_text"&gt;{{item.nickName}}&lt;/div&gt;
+              &lt;div class="fr wm_card_rank_point"&gt;{{item.guessCardCount|setBigNum}}张卡牌&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/el-carousel-item&gt;
+&nbsp;
+      &lt;el-carousel-item&gt;
+        &lt;div class="wm_card_rank_item_box"
+             id="wmLevelRankBox"&gt;
+          &lt;h5 class="wm_card_chiose_title"
+              id="wm_card_rank_title"&gt;等级排行榜&lt;/h5&gt;
+          &lt;p class="wm_card_rank_last_updata"&gt;
+            最后更新：
+            &lt;span class="wm_card_rank_last_time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;div class="wm_card_rank_list"&gt;
+            &lt;div class="clearfix wm_card_rank_box"
+                 v-for="(item,index) in rankData.level"
+                 v-bind:key="index"
+                 @click="watchInfo(item.md5)"&gt;
+              &lt;div class="fl wm_card_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;
+              &lt;div class="fl wm_card_rank_img"&gt;
+                &lt;img class="wm_card_get_list_avatar_pic"
+                     :src="'/api/gravatar.png?md5='+item.md5"
+                     width="45"
+                     height="45"&gt;
+              &lt;/div&gt;
+              &lt;div class="fl wm_card_nickname_text"&gt;{{item.nickName}}&lt;/div&gt;
+              &lt;div class="fr wm_card_rank_point"&gt;{{item.level}}级&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/el-carousel-item&gt;
+      &lt;el-carousel-item&gt;
+        &lt;div class="wm_card_rank_item_box"
+             id="wmLevelRankBox"&gt;
+          &lt;h5 class="wm_card_chiose_title"
+              id="wm_card_rank_title"&gt;任务完成榜&lt;/h5&gt;
+          &lt;p class="wm_card_rank_last_updata"&gt;
+            最后更新：
+            &lt;span class="wm_card_rank_last_time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;div class="wm_card_rank_list"&gt;
+            &lt;div class="clearfix wm_card_rank_box"
+                 v-for="(item,index) in rankData.questCount"
+                 v-bind:key="index"
+                 @click="watchInfo(item.md5)"&gt;
+              &lt;div class="fl wm_card_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;
+              &lt;div class="fl wm_card_rank_img"&gt;
+                &lt;img class="wm_card_get_list_avatar_pic"
+                     :src="'/api/gravatar.png?md5='+item.md5"
+                     width="45"
+                     height="45"&gt;
+              &lt;/div&gt;
+              &lt;div class="fl wm_card_nickname_text"&gt;{{item.nickName}}&lt;/div&gt;
+              &lt;div class="fr wm_card_rank_point"&gt;完成{{item.questCount}}次&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/el-carousel-item&gt;
+      &lt;el-carousel-item&gt;
+        &lt;div class="wm_card_rank_item_box"
+             id="wmLevelRankBox"&gt;
+          &lt;h5 class="wm_card_chiose_title"
+              id="wm_card_rank_title"&gt;制卡榜&lt;/h5&gt;
+          &lt;p class="wm_card_rank_last_updata"&gt;
+            最后更新：
+            &lt;span class="wm_card_rank_last_time"&gt;{{rankData.time|capitalize}}&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;div class="wm_card_rank_list"&gt;
+            &lt;div class="clearfix wm_card_rank_box"
+                 v-for="(item,index) in rankData.UCC"
+                 v-bind:key="index"
+                 @click="watchInfo(item.md5)"&gt;
+              &lt;div class="fl wm_card_rank_text"&gt;{{index+1|rankTetx}}&lt;/div&gt;
+              &lt;div class="fl wm_card_rank_img"&gt;
+                &lt;img class="wm_card_get_list_avatar_pic"
+                     :src="'/api/gravatar.png?md5='+item.md5"
+                     width="45"
+                     height="45"&gt;
+              &lt;/div&gt;
+              &lt;div class="fl wm_card_nickname_text"&gt;{{item.nickName}}&lt;/div&gt;
+              &lt;div class="fr wm_card_rank_point"&gt;制卡{{item.UCC}}种&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/el-carousel-item&gt;
+    &lt;/el-carousel&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+import { authApi } from "../api";
+&nbsp;
+export default {
+  data () {
+    return {
+      txDays: new Date().getDate(),
+      card: 'card',
+      changed: true,
+      rankData: null
+    };
+  },
+  created () {
+    this.getRank();
+    this.setCard();
+  },
+  mounted () {
+    window.addEventListener('resize', this.setCard);
+  },
+  filters: {
+    setBigNum: function (v) {
+      let n = Number(v);
+      if (n &gt;= 100000) {
+        return Math.floor(n / 10000) + '万';
+      } else {
+        return v;
+      }
+    },
+    rankTetx: function (v) {
+      if (v == 1) {
+        return '1st'
+      } else if (v == 2) {
+        return '2nd'
+      } else if (v == 3) {
+        return '3rd'
+      } else {
+        return v + 'th'
+      }
+    },
+    capitalize: function (value) {
+      var date = new Date(parseInt(value));
+      var tt = [date.getFullYear(), ((date.getMonth() + 1) &lt; 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1), (date.getDate() &lt; 10 ? '0' + date.getDate() : date.getDate())].join('-') + '  ' + [(date.getHours() &lt; 10 ? '0' + date.getHours() : date.getHours()), (date.getMinutes() &lt; 10 ? '0' + date.getMinutes() : date.getMinutes()), (date.getSeconds() &lt; 10 ? '0' + date.getSeconds() : date.getSeconds())].join(':');
+      return tt;
+    }
+  },
+  methods: {
+    watchInfo (md5) {
+      this.$emit('watchInfo', md5);
+    },
+    getRank () {
+      authApi.rank().then(res =&gt; {
+        if (res.data.code == 1) {
+          this.rankData = res.data.data;
+          console.log(this.rankData);
+        }
+      });
+    },
+    setCard () {
+      let w = window.innerWidth;
+      if (w &gt; 768) {
+        if (this.card === '') {
+          this.changed = false;
+          this.card = 'card';
+          setTimeout(() =&gt; {
+            this.changed = true;
+          }, 20)
+        }
+      } else {
+        if (this.card === 'card') {
+          this.changed = false;
+          this.card = '';
+          setTimeout(() =&gt; {
+            this.changed = true;
+          }, 20)
+        }
+      }
+    }
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.setCard);
+  }
+};
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="stylus" scoped&gt;&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

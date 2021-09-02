@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/views/guessCard/guessHistory.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">app/views/guessCard</a> guessHistory.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+  &lt;div class="wm_guesscard_content_body"&gt;
+    &lt;transition name="el-fade-in-linear"&gt;
+<span class="cstat-no" title="statement not covered" >      &lt;div v-if="pageChanging"&gt;</span>
+        &lt;h6 class="tc mb15 mt15" v-if="data"&gt;&lt;el-tag type="success" &gt;猜卡生成时间：{{data.time | capitalize}}&lt;/el-tag&gt;&lt;/h6&gt;
+        &lt;div class="wm_guesscard_card_body" v-if="data"&gt;
+          &lt;el-row :gutter="5"&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;el-col class="mb5" </span>:span="4" :xs="8" v-for="(item,index) in data.card" v-bind:key="index"&gt;
+              &lt;div class="wm_guesscard_col"&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;img :class="{wm_guesscard_no</span>sel:checkAttack(index)===-1}" :src="$wikimoecard.url+item.packageId+'/'+item.cardId+'.jpg'" class="wm_guesscard_card_img" v-bind:key="item.cardId" /&gt;
+              &lt;/div&gt;
+            &lt;/el-col&gt;
+          &lt;/el-row&gt;
+        &lt;/div&gt;
+        &lt;el-card v-if="!data" class="mt15 mb15"&gt;&lt;div class="tc pt20 pb20"&gt;&lt;span class="pl5"&gt;暂无记录&lt;/span&gt;&lt;/div&gt;&lt;/el-card&gt;
+        &lt;div class="wm_market_content_page" v-if="total"&gt;
+          &lt;el-pagination
+            small
+            layout="prev, pager, next"
+            :total="total"
+            @current-change="cardPageChange"
+            :current-page.sync="page"
+            :page-size="1"
+            class="my_card_page"&gt;
+          &lt;/el-pagination&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/transition&gt;
+    &lt;el-card class="mt15 mb15" v-if="!pageChanging"&gt;&lt;div class="tc pt20 pb20 cRed"&gt;&lt;i class="el-icon-loading"&gt;&lt;/i&gt;&lt;span class="pl5"&gt;读取中...&lt;/span&gt;&lt;/div&gt;&lt;/el-card&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+import {authApi} from "../../api";
+import {scrollToTop} from "../../../utils/utils";
+&nbsp;
+export default {
+  data() {
+    return {
+      token:sessionStorage.getItem("token")?sessionStorage.getItem("token"):localStorage.getItem("token"),
+      data:null,
+      page:Number(this.$route.query.page) || 1,//当前卡牌页码,
+      total:null,
+      pageChanging:false
+<span class="cstat-no" title="statement not covered" >    }</span>
+  },<span class="fstat-no" title="function not covered" ></span>
+  cr<span class="cstat-no" title="statement not covered" >eated() {</span>
+   this.searchGuessCard();
+  },
+  filters: {
+    capitalize(value) {
+        var date = new Date(parseInt(value*3600*1000));
+        var tt = ((date.getMonth()+1)&lt;10?'0'+(date.getMonth()+1):date.getMonth()+1)+'月'+(date.getDate()&lt;10?'0'+date.getDate():date.getDate())+'日'+(date.getHours()&lt;10?'0'+date.getHours():date.getHours())+'时'
+        return tt;
+    },<span class="fstat-no" title="function not covered" ></span>
+  },<span class="cstat-no" title="statement not covered" ></span>
+  mounted() {
+    this.$emit('l2dMassage','这里可以查看往期的猜卡结果！');
+  },
+  methods: {<span class="fstat-no" title="function not covered" ></span>
+    cardPageChang<span class="cstat-no" title="statement not covered" >e(val){</span>
+        this.pa<span class="cstat-no" title="statement not covered" >ge = val;</span>
+<span class="cstat-no" title="statement not covered" >        this.$rou</span>ter.replace({ 
+          name:'guessHistory',
+          query: {
+            page:thi<span class="fstat-no" title="function not covered" >s.page,</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+        });
+        this.searchGuessCard();
+    },
+    checkAttack(i){<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return this.data.</span>attackIndex.indexOf(i);
+    },<span class="cstat-no" title="statement not covered" ></span>
+    searchGuessCard(){
+      this.pageChanging = false;
+      const params = {
+        token:this.token,
+        type:'history',
+<span class="cstat-no" title="statement not covered" >        page:this.page</span>
+      }
+      this.time = new Date<span class="fstat-no" title="function not covered" >().getTime()</span>;
+<span class="cstat-no" title="statement not covered" >      authApi.searchguesscard(params).then(res </span>=&gt; {
+          if(res.data.code==0){
+            this.$message.erro<span class="fstat-no" title="function not covered" >r(res.data.msg);</span>
+          }else if<span class="cstat-no" title="statement not covered" >(res.</span>data.code==1){
+            this.data = res.data.data[0];
+<span class="cstat-no" title="statement not covered" >            this.total = res.data</span>.total;
+          }<span class="cstat-no" title="statement not covered" ></span>
+          scrollToTop(0,200);
+          this.pageChanging = true;
+      });
+    },
+  }<span class="cstat-no" title="statement not covered" ></span>
+}<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+&lt;/script<span class="cstat-no" title="statement not covered" >&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+&lt;style scoped&gt;<span class="cstat-no" title="statement not covered" ></span>
+.wm_guessc<span class="cstat-no" title="statement not covered" >ard_card_img{</span>
+  width: 1<span class="cstat-no" title="statement not covered" >00%;</span>
+  height: auto;
+}<span class="cstat-no" title="statement not covered" ></span>
+.wm_gues<span class="cstat-no" title="statement not covered" >scard_nosel{</span>
+  opacity: 0.4;
+}
+.wm_guesscard_btn_body{
+    padding: 20px 0;
+    text-align: center;
+<span class="cstat-no" title="statement not covered" >    background-color: #fff;<span class="cstat-no" title="statement not covered" ></span></span>
+    position: fixed;<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    bottom: 0;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >    left: 0;</span>
+    width: 100%;
+    z-index: 999;
+}
+.wm_guesscard_col{
+  padding-bottom: 140%;
+  position: relative;
+  z-index: 1;
+}
+.wm_guesscard_col img{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

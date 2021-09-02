@@ -39,6 +39,7 @@ module.exports = async function (req, res, next) {
   }
   console.info(chalk.green(IP + '的邮箱解析结果为' + email))
   // 验证码验证
+  /*
   if (req.session.captcha != captcha || !captcha) {
     await req.session.destroy((err) => {
       if (err) {
@@ -69,6 +70,8 @@ module.exports = async function (req, res, next) {
     console.info(chalk.yellow('图形验证码有误。IP为：' + IP))
     return false
   }
+
+   */
   // 验证通过减少可疑值
   const timeNow = Math.round(new Date().getTime() / 1000)
   const userTime = Number(result.robotCheckTime)

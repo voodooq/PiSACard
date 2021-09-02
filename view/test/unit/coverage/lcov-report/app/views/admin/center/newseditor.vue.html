@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/views/admin/center/newseditor.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">app/views/admin/center</a> newseditor.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+  &lt;div class="wmcard_admincenter_common_right_body"&gt;
+    &lt;el-form ref="form"
+<span class="cstat-no" title="statement not covered" >             :model="form"</span>
+             label-width="80px"&gt;
+      &lt;el-form-item label="标题"&gt;
+        &lt;el-input v-model="form.title"
+<span class="cstat-no" title="statement not covered" >                  placeholder="请输入标题"&gt;&lt;/el-input&gt;</span>
+      &lt;/el-form-item&gt;
+      &lt;el-form-<span class="cstat-no" title="statement not covered" >item label="内容"&gt;</span>
+        &lt;el-input type="textarea"
+<span class="cstat-no" title="statement not covered" >                  :rows="20"</span>
+                  placeholder="请输入内容"
+<span class="cstat-no" title="statement not covered" >                  v-model="form.text"&gt;</span>
+        &lt;/el-input&gt;
+      &lt;/e<span class="fstat-no" title="function not covered" >l-form-item&gt;<span class="cstat-no" title="statement not covered" ></span></span>
+      &lt;el-form-item label="首页显示"&gt;
+        &lt;el-switch v-model="form.top"&gt;&lt;/el-switch&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label="发布时间"&gt;
+        &lt;el-date-picker v-model="form.time"
+                        type="datetime"
+                        value-format="timestamp"
+                        placeholder="选择发布时间"&gt;
+        &lt;/el-date-picker&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item&gt;
+        &lt;el-button type="primary"
+                   @click="onSubmit"&gt;{{id?'修改':'发布'}}&lt;/el-button&gt;
+        &lt;el-button @click="backIndex"&gt;返回&lt;/el-button&gt;
+      &lt;/el-form-item&gt;
+    &lt;/el-form&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+import { authApi } from "../../../api";
+import { mailCheck } from "../../../../utils/utils";
+export default {
+  data () {
+    return {
+      form: {
+        text: '',
+        title: '',
+        top: false,
+        time: new Date().getTime()
+      },
+      id: null,
+      token: sessionStorage.getItem("adminToken") ? sessionStorage.getItem("adminToken") : localStorage.getItem("adminToken")
+    }
+  },
+  created () {
+    this.id = this.$route.query._id;
+<span class="cstat-no" title="statement not covered" >    if (this.id) {</span>
+      this.getNew<span class="fstat-no" title="function not covered" >s();</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  },
+  mounted () {
+  },
+  methods: {
+    backIndex () {
+      this.$router.push({ path: '/cardadmin/center/newslist' });
+    },
+    getNews () {
+      let params = {
+        type: 'get',
+        token: this.<span class="fstat-no" title="function not covered" >token,</span>
+<span class="cstat-no" title="statement not covered" >        _id: this.id</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      authApi.adminNew</span>s(params).then(res =&gt; {
+        console.log(res);
+        if (res.data.code == 1) {
+          this.form <span class="fstat-no" title="function not covered" >= res.da</span>ta.data
+        } else {
+          this.$message.error(res.data.msg);
+        }<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      });</span>
+    },
+    onSubmit () {<span class="fstat-no" title="function not covered" ></span>
+      let params =<span class="cstat-no" title="statement not covered" > {</span>
+        type: 'add',
+        token: this<span class="cstat-no" title="statement not covered" >.token,</span>
+      }
+      if (this.id) {
+        params.type = 'edit';
+        params['_id'] = this.id;
+<span class="cstat-no" title="statement not covered" >      }<span class="fstat-no" title="function not covered" ></span></span>
+      pa<span class="cstat-no" title="statement not covered" >rams = Object.assi</span>gn(params, this.form);
+      if<span class="cstat-no" title="statement not covered" > (!params.text || !params.title || isNaN(params.time)) {</span>
+        th<span class="cstat-no" title="statement not covered" >is.$message.error('提交内容有误，请检</span>查！');
+        return false;
+      }<span class="cstat-no" title="statement not covered" ></span>
+      authApi.adminNews(params).then(res =&gt; {
+        console.log(res);
+        if (res.data.code == 1) {
+          this.$message<span class="fstat-no" title="function not covered" >({</span>
+            message<span class="cstat-no" title="statement not covered" >: '公告</span>发布成功！',
+            type: 'success'
+          });<span class="cstat-no" title="statement not covered" ></span>
+          this.$router.push({
+            path: '/cardadmin/center/newslist'
+          });
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >          this.$message.error(</span>res.data.msg);
+<span class="cstat-no" title="statement not covered" >        }</span>
+      });
+    }<span class="cstat-no" title="statement not covered" ></span>
+  },<span class="cstat-no" title="statement not covered" ></span>
+}<span class="cstat-no" title="statement not covered" ></span>
+&lt;/script<span class="cstat-no" title="statement not covered" >&gt;</span>
+&nbsp;
+&lt;style<span class="cstat-no" title="statement not covered" >&gt;<span class="fstat-no" title="function not covered" ></span></span>
+.wm_admi<span class="cstat-no" title="statement not covered" >n_sk_copy {</span>
+  border<span class="cstat-no" title="statement not covered" >-radius: 3px;</span>
+  border: <span class="cstat-no" title="statement not covered" >1px solid #bebebe;</span>
+  padding: 5px 10px;
+  height: 24px;
+  line-height: 24px;
+}<span class="cstat-no" title="statement not covered" ></span>
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

@@ -19,6 +19,7 @@ module.exports = async function(req, res, next){
         adminSK_ = await utils.adminSK(SK);
     }
     if(!adminSK_ && type!=='search'){
+        /*
         if(req.session.captcha!=captcha || !captcha){
             await req.session.destroy((err)=> {
                 if(err){
@@ -43,6 +44,8 @@ module.exports = async function(req, res, next){
                 );
             }
         })
+
+         */
     }
     //解析token
     if(!token){

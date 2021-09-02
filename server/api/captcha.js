@@ -7,4 +7,5 @@ module.exports = function(req, res, next){
 	req.session.captcha = captcha.text;
 	res.type('svg');
 	res.status(200).send(captcha.data);
+	console.info('captcha：' + req.session.captcha);
 }

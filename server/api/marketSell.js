@@ -19,6 +19,7 @@ module.exports = async function (req, res, next) {
         adminSK_ = await utils.adminSK(SK);
     }
     if (!adminSK_ && type !== 'search') {
+        /*
         if (req.session.captcha != captcha || !captcha) {
             let oldCaptcha = req.session.captcha;
             await req.session.destroy((err) => {
@@ -44,6 +45,8 @@ module.exports = async function (req, res, next) {
                 );
             }
         });
+
+         */
     }
     if (price > 99999999) {
         res.send({

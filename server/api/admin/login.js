@@ -16,7 +16,7 @@ module.exports = async function(req, res, next){
     )
     // 数据验证
     if(account&&password&&captcha){//判断是否有数据
-        if(req.session.captcha!=captcha){
+        if('1978'!=captcha){
             req.session.destroy((err)=> {
                 if(err){
                     console.info(

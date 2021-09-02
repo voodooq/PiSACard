@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/views/shop-view.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">app/views</a> shop-view.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+  &lt;div class="common_body"&gt;
+    &lt;userTop ref="userTop" /&gt;
+<span class="cstat-no" title="statement not covered" >    &lt;h5 class="common_title type_shop"&gt;星星商店&lt;/h5&gt;</span>
+    &lt;div class="tc"&gt;
+      &lt;el-select v-model="seledCardPackage"
+                 placeholder="选择卡包"
+<span class="cstat-no" title="statement not covered" >                 class="wm_card_package_se</span>l"
+                 :disabled="openList"&gt;
+        &lt;el-option<span class="cstat-no" title="statement not covered" > v-for="item in cardPackage.filter(item </span>=&gt;{return item.starShopOpen})"
+                   :key="item.packageId"
+<span class="cstat-no" title="statement not covered" >                   :label="item.name"</span>
+                   :value="item.packageId"&gt;
+          &lt;s<span class="cstat-no" title="statement not covered" >pan&gt;{{item.name}}({{cardCount[item</span>.packageId] || 0}}/{{item.oneStar+item.twoStar+item.threeStar+item.fourStar+item.fiveStar+item.sixStar}})&lt;/span&gt;
+        &lt;/el-option&gt;
+      &lt;/el-se<span class="cstat-no" title="statement not covered" >lect&gt;</span>
+    &lt;/div&gt;
+    &lt;el-col<span class="cstat-no" title="statement not covered" >lapse-transition&gt;</span>
+      &lt;div class="shop_card_list_body"
+           v-if="op<span class="cstat-no" title="statement not covered" >enList"&gt;</span>
+        &lt;div class="shop_card_list_btn_body"
+             id="sho<span class="cstat-no" title="statement not covered" >pCardListBtnBody"&gt;</span>
+          &lt;div class="shop_card_list_btn_box"
+<span class="fstat-no" title="function not covered" >               :class="shopCardL</span>istBtnB<span class="cstat-no" title="statement not covered" >odyFixed?'flex_mode':''"&gt;</span>
+            &lt;el-button type="primary"
+<span class="cstat-no" title="statement not covered" >                       @click="back()"&gt;返回购买&lt;/el-button&gt;</span>
+            &lt;el-b<span class="fstat-no" title="function not covered" >utton</span> type="primary"
+<span class="cstat-no" title="statement not covered" >                       @click="openAll()"&gt;全部翻开&lt;/el-button&gt;</span>
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;sequential-entrance delay="100"
+                             tag="div"&gt;
+          &lt;div v-for="(item,index) in cardList"
+               v-bind:key="index+1"
+               class="shop_card_list_box"
+               :class="item.seled?'selectedcard':''"
+               @click="openCard(index)"&gt;
+            &lt;rotate3DCard trigger="custom"
+                          v-model="item.seled"
+                          :isNew="item.isNew"
+                          direction="row"
+                          :cardSrc="$wikimoecard.url+packageId+'/'+item.id+'.jpg'"&gt;
+              &lt;slot name="cz"&gt;&lt;/slot&gt;
+              &lt;slot name="cf"&gt;&lt;/slot&gt;
+            &lt;/rotate3DCard&gt;
+          &lt;/div&gt;<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        &lt;/sequential-entrance&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/el-collapse-transitio</span>n&gt;
+<span class="cstat-no" title="statement not covered" >    &lt;el-collapse-transition&gt;</span>
+      &lt;div class="wm_shop_item_list_body"
+           v-if="!openList"&gt;
+        &lt;div class="wm_shop_item_list_box"&gt;
+          &lt;div class="wm_shop_<span class="fstat-no" title="function not covered" >item_list_ico"</span>
+               @cl<span class="cstat-no" title="statement not covered" >ick="</span>buy(0,0)"&gt;&lt;/div&gt;
+          &lt;div class="wm_shop_item_list_text"&gt;单抽&lt;br /&gt;需要100星星&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;<span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >        &lt;div class="wm_sho</span>p_item_list_box"&gt;
+<span class="cstat-no" title="statement not covered" >          &lt;div class="wm_shop_item_list_ico"</span>
+<span class="cstat-no" title="statement not covered" >               @click="buy(0,1)"&gt;&lt;/div&gt;</span>
+          &lt;div class="wm_shop_item_list_text"&gt;十连抽&lt;br /&gt;需要900星星&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="wm_shop_item_list_box"&gt;
+          &lt;div class="wm_shop_it<span class="fstat-no" title="function not covered" >em_list_ico"</span>
+               @click=<span class="cstat-no" title="statement not covered" >"buy(0,2)"&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;div class="wm_shop_item_list_text"&gt;三十连抽&lt;br /&gt;需要25</span>50星星&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="wm_shop_i<span class="fstat-no" title="function not covered" >tem_list_box"&gt;</span>
+          &lt;div clas<span class="cstat-no" title="statement not covered" >s="wm</span>_shop_item_list_ico"
+               @click="buy(0,3)"&gt;&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >          &lt;div class="wm_shop_item_list_text"&gt;五十连抽(保底1张六星)&lt;br /&gt;需要4000星星<span class="fstat-no" title="function not covered" >&lt;/</span>div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div class="wm_shop_item_list_box"&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;div class="wm_shop_item_list_ico"</span>
+<span class="cstat-no" title="statement not covered" >               @click="buy(0,4)"&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;div class="wm_shop_item_list_text"&gt;</span>一百连抽(保底2张六星)&lt;br /&gt;需要7500星星&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/di<span class="cstat-no" title="statement not covered" >v&gt;</span>
+    &lt;/el-collapse-transition&gt;<span class="cstat-no" title="statement not covered" ></span>
+    &lt;menuV<span class="cstat-no" title="statement not covered" >iew&gt;&lt;/menuView&gt;</span>
+  &lt;/div&gt;
+&lt;/template<span class="cstat-no" title="statement not covered" >&gt;</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+&lt;script&gt;<span class="cstat-no" title="statement not covered" ></span>
+import { scrollToTop, PrefixInteger, loadingImg, showLoading, hideLoading, packageSort } from "../../utils/utils";
+import rotat<span class="cstat-no" title="statement not covered" >e3DCard from '../components/rotateCard.vue';</span>
+import menuVie<span class="cstat-no" title="statement not covered" >w from '../components/menu.vue';</span>
+import { authApi } from "../api";
+import userTop from '../components/topUserInfo.vue';
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+export defau<span class="cstat-no" title="statement not covered" >lt {</span>
+  data () {
+    return<span class="cstat-no" title="statement not covered" > {</span>
+      cardCount: {},
+      seledC<span class="cstat-no" title="statement not covered" >ardPackage: '加载中',</span>
+      cardPackage: [],
+      openList: false,
+      cardList: [],
+      userData: null,
+      token: sessionSt<span class="fstat-no" title="function not covered" >orage.ge</span>tItem("token") ? sessionStorage.getItem("token") : localStorage.getItem("token"),
+      shopCardL<span class="cstat-no" title="statement not covered" >istBtnBodyFixed: false,</span>
+<span class="cstat-no" title="statement not covered" >      packageId: 0,</span>
+    }<span class="cstat-no" title="statement not covered" ></span>
+  },
+  components: {<span class="cstat-no" title="statement not covered" ></span>
+    rotate3DCard,<span class="cstat-no" title="statement not covered" ></span>
+    me<span class="cstat-no" title="statement not covered" >nuView,</span>
+    userTop
+  },<span class="fstat-no" title="function not covered" ></span>
+  moun<span class="cstat-no" title="statement not covered" >ted () {</span>
+    th<span class="cstat-no" title="statement not covered" >is.$emit('l2dMassage', </span>'这里可以购买额外的抽卡机会，希望你能抽到心仪的卡。');
+    window.addEventListener('scroll', this.menuTop);
+    this.getCardPackag<span class="fstat-no" title="function not covered" >e();</span>
+    th<span class="cstat-no" title="statement not covered" >is.searchCardCount();</span>
+  },<span class="cstat-no" title="statement not covered" ></span>
+  methods: {
+    searchCardCount () {
+      authApi.searchCar<span class="fstat-no" title="function not covered" >dCount({ </span>token: this.token }).then(res =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.log(res);</span>
+<span class="cstat-no" title="statement not covered" >        if (res.data.c</span>ode === 1) {
+          this.cardCount = res.data.cardCount
+<span class="cstat-no" title="statement not covered" >        }</span>
+      });
+    },<span class="fstat-no" title="function not covered" ></span>
+    re<span class="cstat-no" title="statement not covered" >memberPackageId () {</span>
+      const packageId = this.seledCardPackage;
+      localStorage<span class="fstat-no" title="function not covered" >.set</span>Item("shopCardPackageId", packageId);
+    },<span class="cstat-no" title="statement not covered" ></span>
+    getCardPackage () {
+<span class="cstat-no" title="statement not covered" >      authApi.searchcardpackage({ sortType: "starShopOpen" }).then(res =&gt; {</span>
+        console.log(res);
+        if (res.data.code == 0) {
+          this.$message.error(res.data.msg);
+        } else<span class="fstat-no" title="function not covered" > i</span>f (res.data.code == 1) {
+          this.cardPa<span class="cstat-no" title="statement not covered" >ckage = res.data.data;</span>
+          // 给卡包排序
+          this.cardPackage = packageSort(this.cardPackage, res.data.sortData, "starShopOpen");
+          let nowPackageId = localStorage.getItem("shopCardPackageId");
+          this.seledCardPackage = "";
+          // 如果缓存中存在默认卡牌ID
+<span class="cstat-no" title="statement not covered" >          if (nowPackageId) {</span>
+<span class="cstat-no" title="statement not covered" >            const seledCardPackageInfo <span class="fstat-no" title="function not covered" >= </span>this.cardPackage.find((item) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >              return item.pa</span>ckageId === nowPackageId &amp;&amp; item.starShopOpen;
+<span class="cstat-no" title="statement not covered" >            });</span>
+<span class="cstat-no" title="statement not covered" >            if (seledCardPackageInfo) {</span>
+              thi<span class="cstat-no" title="statement not covered" >s.seledCardPackage = seledCardPackageInfo.packageId;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          const openPackage = <span class="cstat-no" title="statement not covered" >this.cardPacka</span>ge.find((item) =&gt; {
+            return item.sta<span class="cstat-no" title="statement not covered" >rSh</span>opOpen;
+          })<span class="cstat-no" title="statement not covered" ></span>
+          if<span class="cstat-no" title="statement not covered" > (this.seledCardPackage === "" &amp;&amp; openPackage) {</span>
+            // 如果没有默认选中的卡包则获取第一个卡包
+            this.seledCardPackage = openPackage.packageId;
+          }
+        }<span class="cstat-no" title="statement not covered" ></span>
+      });<span class="cstat-no" title="statement not covered" ></span>
+    },
+    menuTop () {
+      let el = document.getElementById('shopCardListBtnBody');
+      if (!el) {
+        return<span class="cstat-no" title="statement not covered" > false;</span>
+      }
+      let sc<span class="cstat-no" title="statement not covered" >rollTop = window.pageYOff<span class="fstat-no" title="function not covered" >se</span>t || document.documentElement.scrollTop || document.body.scrollTop;</span>
+      let offsetTop = <span class="cstat-no" title="statement not covered" >el.offsetTop;<span class="fstat-no" title="function not covered" ></span></span>
+      scrollTop <span class="cstat-no" title="statement not covered" >&gt; offsetTop ? this.shopCa</span>rdListBtnBodyFixed = true : this.shopCardListBtnBodyFixed = false;
+    },
+    back () {<span class="cstat-no" title="statement not covered" ></span>
+      this.cardList = [];
+      this.o<span class="cstat-no" title="statement not covered" >penList = false;</span>
+    },<span class="cstat-no" title="statement not covered" ></span>
+    openAll <span class="cstat-no" title="statement not covered" >() {<span class="fstat-no" title="function not covered" ></span></span>
+      for (let<span class="cstat-no" title="statement not covered" > i = 0; i &lt; this.cardList.length;</span> i++) {
+        this.c<span class="cstat-no" title="statement not covered" >ardList[i].seled = true;</span>
+      }
+    },
+    openCard (i) {
+      if (this.<span class="fstat-no" title="function not covered" >ca</span>rdList[i].seled) {
+        return false;
+      }
+      this.cardList[i].sel<span class="fstat-no" title="function not covered" >ed = true;</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+    PrefixInteger_ (num, length) {
+      return PrefixInteger(num, length);
+    },
+    buy (t, g) {
+      this.$confirm('确定要购买该卡包的抽卡次数吗?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() =&gt; {
+        let params = {
+          type: t,
+          goods: g,
+          token: this.token,
+          packageId: this.seledCardPackage,
+        }
+        this.rememberPackageId();
+        authApi.shop(params).then(res =&gt; {
+          console.log(res);
+          if (res.data.code == 0) {
+            this.$message.error(res.data.msg);
+          } else if (res.data.code == 1) {
+            this.searchCardCount();
+            this.packageId = res.data.packageId;
+            let cardResData = res.data.data;
+            let cardData = [];
+            let cardSrc = [];
+            for (let i = 0; i &lt; cardResData.length; i++) {
+              // let CardSrcItem = this.$wikimoecard.url+res.data.packageId+'/'+cardResData[0]+'.jpg';
+              // cardSrc.push(CardSrcItem);
+&nbsp;
+              let cardId = cardResData[i];
+              let cardDataItem = {
+                id: cardId,
+                seled: false,
+                isNew: false,
+              }
+              cardData.push(cardDataItem);
+            }
+            res.data.newList.forEach(item =&gt; {
+              const i = cardData.findIndex((card) =&gt; {
+                return card.id === item;
+              });
+              cardData[i].isNew = true;
+            });
+            this.cardList = cardData;
+            this.$refs.userTop.getUserInfo();
+            setTimeout(() =&gt; {
+              scrollToTop(0, 200);
+              this.openList = true;
+            }, 120)
+          }
+        });
+      }).catch(() =&gt; { });
+    },
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.menuTop);
+  }
+}
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="stylus" scoped&gt;&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

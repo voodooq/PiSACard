@@ -4,13 +4,13 @@ function configData() {
     port: 3000, //网页端口
     https: false, //是否开启https,
     sslPort: 667, //https端口
-    site: 'https://127.0.0.1:667', //站点域名
-    keyFileSrc: './bin/nodejs.wikimoe.com-key.pem', //私钥文件路径
-    certFileSrc: './bin/nodejs.wikimoe.com-chain.pem', //证书文件路径
+    site: 'http://127.0.0.1:3000', //站点域名
+    keyFileSrc: './bin/card.pisa.world.key', //私钥文件路径
+    certFileSrc: './bin/card.pisa.world.pem', //证书文件路径
     url: 'mongodb://localhost:27017/PiSACard2021', //mongoDB地址
-    sessionSecret: 'pisacard1', //session加密字符串
-    JWTSecret: 'pisacard1', //JWT加密字符串
-    dailyChance: 5, //每日抽卡次数
+    sessionSecret: 'card.pisa.world', //session加密字符串
+    JWTSecret: 'card.pisa.world', //JWT加密字符串
+    dailyChance: 3, //每日抽卡次数
     smtpHost: 'smtp.163.com', //邮件发送host
     smtpPort: 465, //邮件发送端口
     smtpAuth: {
@@ -30,8 +30,8 @@ function configData() {
     creatCardExplainUrl: '', //制卡说明图片URL地址
     QQunURL: '', //加群链接
     courseURL: '', //教程链接
-    browserTitle: 'PiSA抽卡', //浏览器标签标题
-    siteTitle: 'PiSA抽卡', //网站标题
+    browserTitle: 'PiSA卡牌', //浏览器标签标题
+    siteTitle: 'PiSA 卡牌', //网站标题
   }
   let myConfig = fs.readFileSync('./config/config.json', 'utf8')
   myConfig = JSON.parse(myConfig)

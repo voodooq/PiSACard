@@ -40,6 +40,9 @@ module.exports = async function(req, res, next){
             adminSK_ = await utils.adminSK(SK);
         }
         if(!adminSK_){
+            /*
+            //console.info('session验证码：'+req.session.captcha);
+            //console.info('输入验证码：'+captcha);
             if(req.session.captcha!=captcha || !captcha){
                 req.session.destroy((err)=> {
                     if(err){
@@ -56,7 +59,7 @@ module.exports = async function(req, res, next){
                     chalk.yellow('email:'+email+'图形验证码有误。IP为：'+IP)
                 );
                 return false;
-            }
+            }*/
         }
         let params = {
             email:email

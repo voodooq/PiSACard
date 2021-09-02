@@ -1,0 +1,2583 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/components/battle.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">app/components</a> battle.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+  &lt;div id="battleView"
+       class="wm_battle_body"&gt;
+<span class="cstat-no" title="statement not covered" >    &lt;div class="wm_battle_box"</span>
+         @click="closeBattle()"
+         v-show="canClose"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+&lt;script&gt;<span class="cstat-no" title="statement not covered" ></span>
+import * as PIXI from 'pixi.js'
+import { Pref<span class="cstat-no" title="statement not covered" >ixInteger, randomNum } from "</span>../../utils/utils";
+&nbsp;
+export de<span class="fstat-no" title="function not covered" >fault {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span></span></span></span></span></span></span>
+  props: {
+    battleData: {
+      type: Object
+    },
+  },
+  data () {
+    return {
+      app: null,
+      canClose: false,
+    }
+  },
+<span class="cstat-no" title="statement not covered" >  mounted () {</span>
+    this.drawBattle();
+  },
+  methods: {
+    seeMyInfo (sprite, e) {
+      console.log(sprite);
+      console.log<span class="fstat-no" title="function not covered" >(e.da</span>ta.getLocalPosition(sprite.parent));
+<span class="cstat-no" title="statement not covered" >    },</span>
+    closeBattle () {
+      if (this.canClose) {
+        this.$emit('gameover');
+        console.log('关闭战斗');
+      }<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+    MergeArray (arr1, arr2) {
+      var _arr = new Array();
+      for (var i = 0; i &lt; arr1.length; i++) {
+        _arr.push(arr1[i<span class="fstat-no" title="function not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      for (var i = 0; i &lt; arr2.length; i++) {</span>
+        var flag = true;
+        for (var j = 0; j <span class="fstat-no" title="function not covered" >&lt; arr1.lengt</span>h; j++) {
+<span class="cstat-no" title="statement not covered" >          if (arr2[i] == arr1[j]) {</span>
+<span class="cstat-no" title="statement not covered" >            flag = false;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+          }
+        }
+        if (flag) {<span class="fstat-no" title="function not covered" ></span>
+          _arr.pu<span class="cstat-no" title="statement not covered" >sh(arr2[i]);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+      }<span class="cstat-no" title="statement not covered" ></span>
+      return _arr;
+    },<span class="cstat-no" title="statement not covered" ></span>
+    drawBattle () {<span class="cstat-no" title="statement not covered" ></span>
+      le<span class="cstat-no" title="statement not covered" >t loadingAlphUp = false;</span>
+      let <span class="cstat-no" title="statement not covered" >that = this;</span>
+      let se<span class="cstat-no" title="statement not covered" >nceChangeFlag </span>= false;//场景切换标记
+      let ti<span class="cstat-no" title="statement not covered" >merCoun</span>t = 0;//动画延时计算用
+      const loader = new PIXI.Loader();
+      const app = new PIXI.Application({
+<span class="cstat-no" title="statement not covered" >        width: 720, height: 1280, backgroundColor: 0x000000, resolution: window.devicePixelRatio || 1,</span>
+      });<span class="cstat-no" title="statement not covered" ></span>
+      this.app = app;
+      document.getElementById('battleView').appendChild(app.view);
+<span class="cstat-no" title="statement not covered" >      // 三个场景读取、战斗、</span>结算
+      const loadingSence = new PIXI.Container();
+      const battleStartSe<span class="fstat-no" title="function not covered" >nce = new P</span>IXI.Container();
+      let battleSe<span class="cstat-no" title="statement not covered" >nce =</span> new PIXI.Container();
+      battleSence.sortableChildren = true;
+      const battleEndSence<span class="cstat-no" title="statement not covered" > = new</span> PIXI.Container();
+      app.stage.a<span class="cstat-no" title="statement not covered" >ddChi</span>ld(loadingSence);
+      app.stage.addChild(bat<span class="cstat-no" title="statement not covered" >tleSta</span>rtSence);
+      app.stage.addChil<span class="cstat-no" title="statement not covered" >d(</span>battleSence);
+      app.stage.add<span class="cstat-no" title="statement not covered" >Child(battleEndSen</span>ce);
+      battleStar<span class="cstat-no" title="statement not covered" >tSence.visible = false;</span>
+      battleSence.visible = false;
+      battleEndSence.visible = false;
+<span class="cstat-no" title="statement not covered" >      battleStartSence</span>.alpha = 0;
+<span class="cstat-no" title="statement not covered" >      battleSence.alpha = 0;</span>
+      battleEndSence.alpha = 0;
+      // 精灵们<span class="cstat-no" title="statement not covered" ></span>
+      let sprites = {};<span class="cstat-no" title="statement not covered" ></span>
+      // 特效们<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      let animeSheetJson = {};</span>
+      // 绘制加载画面<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      let loadingText = new PIXI.Text('少</span>女祈祷中...', { fontFamily: 'Arial', fontSize: 36, fill: 0xffffff, align: 'center' });
+<span class="cstat-no" title="statement not covered" >      loadingText.anchor.set(0.5);</span>
+<span class="cstat-no" title="statement not covered" >      loadingText.position.set(360, 640</span>);
+<span class="cstat-no" title="statement not covered" >      loadingSence.addChild(loadingText);</span>
+<span class="cstat-no" title="statement not covered" >      // 卡牌属性</span>
+<span class="cstat-no" title="statement not covered" >      let myCardRightType = [];</span>
+<span class="cstat-no" title="statement not covered" >      let emCardRightType = [];</span>
+<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; this.bat</span>tleData.MyBattleCard.length; i++) {
+<span class="cstat-no" title="statement not covered" >        console.log(this.batt</span>leData.MyBattleCard[i]);
+<span class="cstat-no" title="statement not covered" >        let cardRightType = this</span>.battleData.cardOtherData[this.battleData.MyBattleCard[i]].rightType;
+        myCardRightType.push(cardRightType);
+      } for (let i =<span class="cstat-no" title="statement not covered" > 0;</span> i &lt; this.battleData.EmBattleCard.length; i++) {
+        let cardRightType = this.battleData.cardOtherData[this.battleData.EmBattleCard[i]].rightType;
+        emCardRightType.pus<span class="cstat-no" title="statement not covered" >h(c</span>ardRightType);
+      }
+      // 加载资源<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      let cardList_ = this.MergeArr</span>ay(this.battleData.MyBattleCard, this.battleData.EmBattleCard);
+<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; cardList_.length</span>; i++) {
+<span class="cstat-no" title="statement not covered" >        loader.add(cardList_[i], '/card/' </span>+ this.battleData.cardOtherData[cardList_[i]].packageId + '/' + cardList_[i] + '.jpg');
+      }
+      loader.add('myAvatar',<span class="cstat-no" title="statement not covered" > '/</span>api/gravatar.png?md5=' + this.battleData.MyMD5);
+      if (this.battleData.Em<span class="cstat-no" title="statement not covered" >MD5</span>) {
+<span class="cstat-no" title="statement not covered" >        loader.add('emAvatar', '/api/gravatar.png?md5=' + this.battleData.EmMD5);</span>
+      } <span class="cstat-no" title="statement not covered" >else {</span>
+        loader.add('emAvatar<span class="cstat-no" title="statement not covered" >', '/static/robotTx/' + Number(this.battleData.EmName.replace(/[^0-9]/ig,</span> '')) + '.jpg');
+      }<span class="cstat-no" title="statement not covered" ></span>
+      l<span class="cstat-no" title="statement not covered" >oader.add('battle_bg', '/static/img/battle_bg.jpg');</span>
+      // 加载动画<span class="cstat-no" title="statement not covered" ></span>
+      lo<span class="cstat-no" title="statement not covered" >ader.add('/static/otherImg/animation/0</span>.json');
+      loader.add('/static/otherImg/animation/2.json');
+      loader.add('/static/otherImg/animation/3.json');
+      loader.add('/sta<span class="cstat-no" title="statement not covered" >tic/otherImg/animation/4.json');</span>
+<span class="cstat-no" title="statement not covered" >      loader.add('/static/otherImg/animation/5.json');</span>
+      lo<span class="cstat-no" title="statement not covered" >ader.add('/static/otherImg/animation/6.json');</span>
+      // 资源加载完毕
+<span class="cstat-no" title="statement not covered" >      loader.load((loader, resources) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        let myCardList = this.battleData.MyBattleCard;</span>
+<span class="cstat-no" title="statement not covered" >        let emCardList = this.battleData.EmBattleCard;</span>
+        sprites['animation'] = {};
+<span class="cstat-no" title="statement not covered" >        sprites['animation']['em'] = {};</span>
+        sprites['animation']['my'] = {};
+<span class="cstat-no" title="statement not covered" >        // 扣血信息</span>
+        sprites['myHPText'] = new PIXI.Text('0', { fontSize: 36, fill: 0xffffff, align: 'right' });
+<span class="cstat-no" title="statement not covered" >        sprites['emHPText'] = new PIXI.Text('0', { font</span>Size: 36, fill: 0xffffff, align: 'right' });
+<span class="cstat-no" title="statement not covered" >        sprites['emHPText'].anchor.set(1, 0);</span>
+<span class="cstat-no" title="statement not covered" >        sprites['myHPText'].anchor.set(1, 0);</span>
+<span class="cstat-no" title="statement not covered" >        sprites['emHPText'].alpha = 0;</span>
+<span class="cstat-no" title="statement not covered" >        sprites['myHPText'].alpha = 0;</span>
+<span class="cstat-no" title="statement not covered" >        sprites['emHPText'].position.set(700, 48);</span>
+        sprites['myHPText'].position.set(700, 1188);
+<span class="cstat-no" title="statement not covered" >        // 卡组<span class="fstat-no" title="function not covered" ></span></span>
+        sprites['mycard']<span class="cstat-no" title="statement not covered" > = {};</span>
+        sprites['emcard']<span class="cstat-no" title="statement not covered" > = {};</span>
+<span class="cstat-no" title="statement not covered" >        // 特效动画</span>
+<span class="cstat-no" title="statement not covered" >        animeSheetJson['0'] = loader.reso</span>urces["/static/otherImg/animation/0.json"].spritesheet;
+<span class="cstat-no" title="statement not covered" >        animeSheetJson['2'] = loader.reso</span>urces["/static/otherImg/animation/2.json"].spritesheet;
+        animeSheetJson['3'] = loader.resources["/static/otherImg/animation/3.json"].spritesheet;
+<span class="cstat-no" title="statement not covered" >        animeSheetJson['4'] = loader.resources["/static/otherImg/animation/4.json"].spritesheet;</span>
+<span class="cstat-no" title="statement not covered" >        animeSheetJson['5'] = loader.resources["/static/otherImg/animation/5.json"].spritesheet;</span>
+<span class="cstat-no" title="statement not covered" >        animeSheetJson['6'] = loader.resources</span>["/static/otherImg/animation/6.json"].spritesheet;
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; myCardList.length;</span> i++) {
+<span class="cstat-no" title="statement not covered" >          sprites['mycard'][myCardList[</span>i]] = new PIXI.Sprite(resources[myCardList[i]]['texture']);
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; emCardList.length; i++)</span> {
+<span class="cstat-no" title="statement not covered" >          sprites['emcard'][emCardList[i]] = new PIXI</span>.Sprite(resources[emCardList[i]]['texture']);
+        }
+<span class="cstat-no" title="statement not covered" >        sprites['battle_bg'] = n</span>ew PIXI.Sprite(resources['battle_bg']['texture']);
+<span class="cstat-no" title="statement not covered" >        initBattleSence(resource</span>s);
+        initGameStartSence(resources);
+<span class="cstat-no" title="statement not covered" >        initGameEndSdence(resources);</span>
+<span class="cstat-no" title="statement not covered" >        senceChangeFlag = true;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+      })<span class="cstat-no" title="statement not covered" >;</span>
+      //<span class="cstat-no" title="statement not covered" > 战斗结算</span>
+      fu<span class="cstat-no" title="statement not covered" >nction initGameEndSdence (resources) {</span>
+<span class="cstat-no" title="statement not covered" >        let myEndNickname = new PIXI.Text(that.battleData.MyName, { fontSize: 36, fill: 0xffffff, align: 'center' });//昵称</span>
+        le<span class="cstat-no" title="statement not covered" >t myEndAvatarSprite = new PIXI.Sprite(resources['myAvatar']['texture']);//我的头像</span>
+        let winText = '平局'
+<span class="cstat-no" title="statement not covered" >        if (that.battleData.win === 1) {</span>
+<span class="cstat-no" title="statement not covered" >          winText = '胜利';</span>
+        } else if (that.battleData.win === 0) {
+<span class="cstat-no" title="statement not covered" >          winText = '战败';</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        let myEndWin = new PIXI.Text(wi</span>nText, { fontSize: 48, fill: 0xffffff, align: 'center' });//战败与否
+<span class="cstat-no" title="statement not covered" >        // 结算竞技点</span>
+<span class="cstat-no" title="statement not covered" >        let myScore = that.battl</span>eData.score + that.battleData.getScore;
+        if (myScore &lt; 0) {
+          myScore = 0;
+        }<span class="fstat-no" title="function not covered" ></span>
+        let getScore = new P<span class="cstat-no" title="statement not covered" >IXI.Text('我的竞技点：' + myScore + '（' + (that.battleData.getScore &gt;= 0 ? '+' + that.battleDat</span>a.getScore : that.battleData.getScore) + '）', { fontSize: 36, fill: 0xffffff, align: 'center' });//竞技点
+        let getExp = new PIXI.Te<span class="cstat-no" title="statement not covered" >xt('获得经验值：' + that.battleData.getExp, { fontSize: </span>36, fill: 0xffffff, align: 'center' });//经验
+        let tips = new<span class="cstat-no" title="statement not covered" > PIXI</span>.Text('点击画面可立即关闭战斗窗口！', { fontSize: 22, fill: 0xffffff, align: 'center' });//经验
+<span class="cstat-no" title="statement not covered" >        // 提示</span>
+        le<span class="cstat-no" title="statement not covered" >t overChance = n</span>ew PIXI.Text(that.battleData.battleOverChance ? '您已超过今天的最大胜利次数，将不会获得竞技点与经验值。' : '', { fontSize: 22, fill: 0xffffff, align: 'center' });//经验
+        // 布局<span class="cstat-no" title="statement not covered" ></span>
+        ge<span class="cstat-no" title="statement not covered" >tScore.anchor.se</span>t(0.5);
+        getExp.anchor.set(0.5);
+        myEndNickname.a<span class="cstat-no" title="statement not covered" >nchor.set(0.5);</span>
+        myEndAvatarSprite.anchor.set(0.5);
+        myEndWin.ancho<span class="cstat-no" title="statement not covered" >r.set(0.5);</span>
+<span class="cstat-no" title="statement not covered" >        overChance.anchor.set(0.5);</span>
+        ti<span class="cstat-no" title="statement not covered" >ps.anchor.set</span>(0.5);
+&nbsp;
+        myEndAvatarSpri<span class="cstat-no" title="statement not covered" >te.position.set(360, 425);</span>
+        myEndNickname<span class="cstat-no" title="statement not covered" >.position.set(360, 516);</span>
+        getScore.po<span class="cstat-no" title="statement not covered" >sition.set(360, 582);</span>
+        getExp.position.set(360, 648);
+        myEndWin.position<span class="cstat-no" title="statement not covered" >.set(360, 300);</span>
+        overChance.position.set(360, 766);
+<span class="cstat-no" title="statement not covered" >        tips.position.set(360, 726</span>);
+<span class="cstat-no" title="statement not covered" >        // 插入场景</span>
+<span class="cstat-no" title="statement not covered" >        battleEndSence.addChild(getScor</span>e);
+<span class="cstat-no" title="statement not covered" >        battleEndSence.addChild(getExp);</span>
+<span class="cstat-no" title="statement not covered" >        battleEndSence.addChild(my</span>EndNickname);
+<span class="cstat-no" title="statement not covered" >        battleEndSence.addChild(myEn</span>dAvatarSprite);
+<span class="cstat-no" title="statement not covered" >        battleEndSence.addChil</span>d(myEndWin);
+        battleEndSence.addChild(overChance);
+<span class="cstat-no" title="statement not covered" >        battleEndSence.addChild(tips);</span>
+      }<span class="cstat-no" title="statement not covered" ></span>
+      //<span class="cstat-no" title="statement not covered" > 战斗场景初始化</span>
+      le<span class="cstat-no" title="statement not covered" >t battleSenceItem = {</span>
+<span class="cstat-no" title="statement not covered" >        bg: null,</span>
+<span class="cstat-no" title="statement not covered" >        myAvatarSprite: null,</span>
+<span class="cstat-no" title="statement not covered" >        myNickname: null,</span>
+        mySAN: null,
+<span class="cstat-no" title="statement not covered" >        myBgSanB: null,</span>
+<span class="cstat-no" title="statement not covered" >        myBgSanA: null,</span>
+<span class="cstat-no" title="statement not covered" >        emAvatarSprite: null,</span>
+<span class="cstat-no" title="statement not covered" >        emNickname: null,</span>
+<span class="cstat-no" title="statement not covered" >        emSAN: null,</span>
+<span class="cstat-no" title="statement not covered" >        emBgSanB: null,</span>
+<span class="cstat-no" title="statement not covered" >        emBgSanA: null,</span>
+        battleMyInfo: new PIXI.Container(),
+        battleEmInfo: new PIXI.Container(),
+      }<span class="cstat-no" title="statement not covered" ></span>
+      function initBattleSence (resources) {
+        battleSenceItem.bg = sprites['battle_bg'];//战斗背景
+        // 我的信息
+        battleSenceItem.myNickname = new PIXI.Text(that.battleData.MyName, { fontSize: 24, fill: 0xffffff, align: 'left' });//昵称
+        battleSenceItem.myAvatarSprite = new PIXI.Sprite(resources['myAvatar']['texture']);//我的头像
+        // Opt-in to interactivity
+        // battleSenceItem.myAvatarSprite.interactive = true;
+        // battleSenceItem.myAvatarSprite.on('pointermove', seeMyInfo_);
+        battleSenceItem.mySAN = new PIXI.Text('SAN:' + that.battleData.MyADSHP[3], { fontSize: 36, fill: 0xffffff, align: 'left' });//SAN
+        // 画我的血条背景
+        battleSenceItem.myBgSanB = new PIXI.Graphics();
+        battleSenceItem.myBgSanB.beginFill(0x890606);
+        battleSenceItem.myBgSanB.drawRect(136, 1233, 564, 27);
+        battleSenceItem.myBgSanB.endFill();
+        // 画我的血<span class="fstat-no" title="function not covered" >条</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.myBgSanA = new PIXI.Graphic</span>s();
+        battleSenceItem.myBgSanA.beginFill(0xfee140);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.myBgSanA.drawRect(136, 1233, 564, 27);</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.myBgSanA.endFill();</span>
+        // 对方的信息
+        battleSenceItem.emAvatarSprite = new PIXI.Sprite(resources['emAvatar']['texture']);//他的头像
+        battleSenceItem.emNickname = new PIXI.Text(that.battleData.EmName, { fontSize: 24, fill: 0xffffff, align: 'left' });//他的昵称
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emSAN = new PIXI.Text('SAN:' + that.battleData.EmADSHP[3], { fontSize: 36, fill: 0xffffff, align: 'left' });/</span>/SAN
+        // 画他的血条背景
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanB = new PIXI.Graphics();</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanB.beginFill(0x890606);</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanB.drawRect(136, 94, 564, 27);</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanB.endFill();</span>
+        // 画他的血条
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanA = new PIXI.Graphics();</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanA.beginFill(0xfee140);</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanA.drawRect(136, 94, 564, 27);</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emBgSanA.endFill();</span>
+        // 设定我的坐标
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.myAvatarSprite.position.set(20, 1160);</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.myNickname.position.set(136, 1160);</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.mySAN.position.set(136, 1188);</span>
+        // 设定他的坐标
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emAvatarSprite.position.set(20, </span>20);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emNickname.position.set(136, 2</span>0);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.emSAN.position.set(136, 48);</span>
+<span class="cstat-no" title="statement not covered" >        // 插入背景</span>
+        battleSence.addChild(battleSenceItem.bg);
+<span class="cstat-no" title="statement not covered" >        // 将我的信息插入容器</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleMyInfo.addChild(battleSe</span>nceItem.myAvatarSprite);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleMyInfo.addChild(battleSenceItem</span>.myNickname);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleMyInfo.addChil</span>d(battleSenceItem.mySAN);
+        battleSenceItem.battleMyInfo.addChild(battleSenceItem.myBgSanB);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleMyInfo.addChild(battleSenceItem.m</span>yBgSanA);
+<span class="cstat-no" title="statement not covered" >        // 将他的信息插入容器</span>
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleEmInfo.addChild(battleSen</span>ceItem.emAvatarSprite);
+        battleSenceItem.battleEmInfo.addChild(battleSenceItem.emNickname);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleEmInfo.addChild(battleSenceItem</span>.emSAN);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleEmInfo.addChild(battleSenceI</span>tem.emBgSanB);
+<span class="cstat-no" title="statement not covered" >        battleSenceItem.battleEmInfo.addChild(battleS</span>enceItem.emBgSanA);
+        // 将卡牌插入到场景
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; that.battleData.MyBatt</span>leCard.length; i++) {
+          sprites['mycard'][that.battleData.MyBattleCard[i]].width = 300;
+<span class="cstat-no" title="statement not covered" >          sprites['mycard'][that.battleData.MyBattleCard[i]].height = 422;</span>
+<span class="cstat-no" title="statement not covered" >          sprites['mycard'][that.battleData.MyBattleCard[i]].anchor.set(0.5</span>);
+<span class="cstat-no" title="statement not covered" >          sprites['mycard'][that.battleData.MyBattleCard[i]].position.</span>set(-180, 922);
+<span class="cstat-no" title="statement not covered" >          // battleSence.addChild(sprites['mycard'][that.battleData.MyBat</span>tleCard[i]]);
+<span class="cstat-no" title="statement not covered" >        }</span>
+        for (let i = 0; i &lt; that.battleData.EmBattleCard.length; i++) {
+<span class="cstat-no" title="statement not covered" >          sprites['emcard'][that.battleData.EmBattleCard[i]].width = 300;</span>
+<span class="cstat-no" title="statement not covered" >          sprites['emcard'][that.battleData.EmBattleCard[i]].height = 422;</span>
+<span class="cstat-no" title="statement not covered" >          sprites['emcard'][that.battleData.EmBattleCard[i]].anchor.se</span>t(0.5);
+<span class="cstat-no" title="statement not covered" >          sprites['emcard'][that.battleData.EmBattleCard[i]].position.set</span>(900, 360);
+<span class="cstat-no" title="statement not covered" >          // battleSence.addChild(sprites['emcard'][that.battleData.EmBat</span>tleCard[i]]);
+        }
+<span class="cstat-no" title="statement not covered" >        // 将第一张卡插入场景</span>
+        ba<span class="cstat-no" title="statement not covered" >ttleSence.addChild(sprites['mycard'][that.battleData.MyBattleCard[</span>0]]);
+        ba<span class="cstat-no" title="statement not covered" >ttleSence.addChild(sprites['emcard'][that.battleData.EmBattleCard[0</span>]]);
+        //<span class="cstat-no" title="statement not covered" > 将容器插入场景</span>
+        ba<span class="cstat-no" title="statement not covered" >ttleSence.addChild(battleSenceItem.battleMyInfo);</span>
+        battleSence.addChild(battleSenceItem.battleEmInfo);
+        battleSence.addChild(sprites['emHPText']);
+<span class="cstat-no" title="statement not covered" >        battleSence.addChild(sprites['myHPText']);</span>
+      }<span class="cstat-no" title="statement not covered" ></span>
+      // 画<span class="cstat-no" title="statement not covered" >战斗</span>
+      let <span class="cstat-no" title="statement not covered" >battleInfo = {</span>
+        tu<span class="cstat-no" title="statement not covered" >rn: 0,</span>
+        battleUser: that.battleData.speed,//当前是谁在打
+        turnEndFlag: 0,//打两回合意味着回合结束
+        cardEnter: true,//是否在卡牌入场阶段
+<span class="cstat-no" title="statement not covered" >        gameOver: false,//是否游戏结束</span>
+<span class="cstat-no" title="statement not covered" >        turnStep: {</span>
+          attacked: false
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        indexCache: null,</span>
+      }<span class="cstat-no" title="statement not covered" ></span>
+      //<span class="cstat-no" title="statement not covered" >显示我的信息弹框</span>
+      function seeMyInfo_ (e) {
+        that.seeMyInfo(battleSenceItem.myAvatarSprite, e);
+      }<span class="cstat-no" title="statement not covered" ></span>
+      function drawBattle () {
+        if (battleInfo.gameOver) {
+          timerCount++;
+          if (timerCount &gt; 30) {
+            senceChangeFlag = true;
+            timerCount = 0;
+          }
+        } else if (battleInfo.turnEndFlag &lt;= 1) {
+          if (battleInfo.cardEnter) {//卡牌入场阶段
+            cardEnter();
+          } else <span class="fstat-no" title="function not covered" >{//使用技能阶段</span>
+<span class="cstat-no" title="statement not covered" >            cardUseSkill();</span>
+          }
+        } else <span class="fstat-no" title="function not covered" >if (battleI</span>nfo.turnEndFlag &gt; 1 &amp;&amp; !battleInfo.gameOver) {
+<span class="cstat-no" title="statement not covered" >          battleInfo.turn++</span>
+<span class="cstat-no" title="statement not covered" >          if (battleInfo</span>.turn &gt; 19) {
+<span class="cstat-no" title="statement not covered" >            battleInfo.gameOver = true;</span>
+<span class="cstat-no" title="statement not covered" >            drawBattle();</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          battleInfo.turnEndFlag = 0;
+          battl<span class="cstat-no" title="statement not covered" >eInfo.turnStep.attacked = false;</span>
+<span class="cstat-no" title="statement not covered" >          battleInfo.cardEnter = true;</span>
+        }
+      }<span class="cstat-no" title="statement not covered" ></span>
+      // 过度动画
+      function cardAnime (card, params, to, step) {
+        let <span class="cstat-no" title="statement not covered" >paramStep = card</span>[params] + step;
+        if (step &lt; 0) {
+          if (p<span class="cstat-no" title="statement not covered" >aramStep &lt;= to) {</span>
+<span class="cstat-no" title="statement not covered" >            paramStep = to;</span>
+<span class="cstat-no" title="statement not covered" >            card[params] = paramStep;</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          card[params] = paramStep;
+        } <span class="cstat-no" title="statement not covered" >else {</span>
+<span class="cstat-no" title="statement not covered" >          if (paramStep &gt;= to) {</span>
+<span class="cstat-no" title="statement not covered" >            paramStep = to;</span>
+            card[params] = paramStep;
+            return true;
+          }
+          card[<span class="fstat-no" title="function not covered" >params] = </span>paramStep;
+        }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+      }<span class="cstat-no" title="statement not covered" ></span>
+      functi<span class="cstat-no" title="statement not covered" >on creatEffAnime</span> (id, x, y, w, h, z, who, speed = 0.4) {
+        spri<span class="cstat-no" title="statement not covered" >tes['animation'][who][id] </span>= new PIXI.AnimatedSprite(animeSheetJson[id].animations[id]);
+        spri<span class="cstat-no" title="statement not covered" >tes['animatio</span>n'][who][id].width = w;
+        sprites['animation'][who][id].height = h;
+        sp<span class="cstat-no" title="statement not covered" >rites['animation'][who][id</span>].x = x;
+        sprites['animation'][who][id].y = y;
+        sp<span class="cstat-no" title="statement not covered" >rites['animation'][who][id].anchor.set(0.5);</span>
+        spri<span class="cstat-no" title="statement not covered" >tes['animation']</span>[who][id].animationSpeed = speed;
+        spri<span class="cstat-no" title="statement not covered" >tes['animation'][who][id].</span>loop = false;
+        spri<span class="cstat-no" title="statement not covered" >tes['animatio</span>n'][who][id].onComplete = () =&gt; {
+          let id_ = id;
+<span class="cstat-no" title="statement not covered" >          sprites['animation'][who][</span>id_].alpha = 0;
+          sprites['animation'][who][id_].destroy();
+<span class="cstat-no" title="statement not covered" >        };</span>
+        battleSence.addChild(sprites['animation'][who][id]);
+        sprites<span class="fstat-no" title="function not covered" >['animation'][</span>who][id].zIndex = z;
+        sprites['ani<span class="cstat-no" title="statement not covered" >mation'][who][id].alpha = 1;</span>
+        sprites['animation'][who][id].play();
+      }<span class="cstat-no" title="statement not covered" ></span>
+      fu<span class="cstat-no" title="statement not covered" >nction setEffanime () {</span>
+<span class="cstat-no" title="statement not covered" >        let myEffect = myCardRightType[battleInfo.</span>turn]
+<span class="cstat-no" title="statement not covered" >        let emEffect = emCardRightType[battle</span>Info.turn]
+<span class="cstat-no" title="statement not covered" >        // 特7</span>
+<span class="cstat-no" title="statement not covered" >        // 魔2</span>
+<span class="cstat-no" title="statement not covered" >        // 物1</span>
+<span class="cstat-no" title="statement not covered" >        // 防3</span>
+<span class="cstat-no" title="statement not covered" >        // 治4<span class="fstat-no" title="function not covered" ></span></span>
+        // 支6<span class="cstat-no" title="statement not covered" ></span>
+        //<span class="cstat-no" title="statement not covered" > 妨5</span>
+        if<span class="cstat-no" title="statement not covered" > (battleInfo.battleUser == 1) {//我</span>
+          creatEffAnime('0', 360, 360, 320, 320, 100, 'em');
+<span class="cstat-no" title="statement not covered" >          // { fontSize: 36, fill : 0xffffff, align : 'right'</span>}
+<span class="cstat-no" title="statement not covered" >          let AttackPow = that.battleData.MyBattle</span>Data[battleInfo.turn][0];
+<span class="cstat-no" title="statement not covered" >          let DefendPow = that.battleData.MyBattl</span>eData[battleInfo.turn][2];
+<span class="cstat-no" title="statement not covered" >          let AttackAddHP = that.battleData.My</span>BattleData[battleInfo.turn][4];
+          const AttackCanSkill = that.battleData.MyBattleData[battleInfo.turn][9];
+          const<span class="fstat-no" title="function not covered" > DefendCanSk</span>ill = that.battleData.MyBattleData[battleInfo.turn][10];
+          if (DefendPow<span class="cstat-no" title="statement not covered" > || AttackAddHP) {</span>
+            let myText <span class="cstat-no" title="statement not covered" >= AttackAddHP - DefendPow;</span>
+            let textColor = 0xff4c4c;
+            if (myText &gt; 0) {
+              textColor = 0x14a774;
+            }
+            if (myText !== 0) {
+              let fuhao = '';
+              if (myText &gt; 0) {
+<span class="cstat-no" title="statement not covered" >                fuhao = '+';</span>
+              }
+<span class="cstat-no" title="statement not covered" >              sprites['myHPText'].style = { fontSize: 36, fil</span>l: textColor, align: 'right' };
+              sprites['myHPText'].text = fuhao + myText;
+              sprites['myH<span class="cstat-no" title="statement not covered" >PText'].alpha = 1;</span>
+            }<span class="cstat-no" title="statement not covered" ></span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          sprites['emHPText'].s<span class="cstat-no" title="statement not covered" >tyle = { fontSize: 36, fill: 0xff4c4c, align: 'ri</span>ght' };
+          sprites['emHPText'].t<span class="cstat-no" title="statement not covered" >ext = '-' + AttackPow;</span>
+<span class="cstat-no" title="statement not covered" >          sprites['emHPText'].alpha = 1;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+          // 我方攻击前<span class="cstat-no" title="statement not covered" ></span>
+          if<span class="cstat-no" title="statement not covered" > (AttackCanSkill) {</span>
+            if<span class="cstat-no" title="statement not covered" > (myEffect === 1) {</span>
+              creatEffAnime('4', 360, 360, 320, 320, 100, 'em', 0.65);
+<span class="cstat-no" title="statement not covered" >            } else if (myEffect === 7) {</span>
+              creatEffAnim<span class="cstat-no" title="statement not covered" >e('</span>4', 360, 360, 320, 320, 100, 'em', 0.65);
+            }<span class="cstat-no" title="statement not covered" ></span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          // 防守方接受攻击前
+          if (<span class="cstat-no" title="statement not covered" >DefendCanSkill) {</span>
+            if<span class="cstat-no" title="statement not covered" > (emEffect === 3) {</span>
+<span class="cstat-no" title="statement not covered" >              creatEffAnime('2', 360, 360, 32</span>0, 320, 99, 'em');
+            } else if (emEffect === 7) {
+              creatEffAnime('2', 360, 360, 320, 320, 99, 'em');
+<span class="cstat-no" title="statement not covered" >            } else if (emEffect === 6) {</span>
+<span class="cstat-no" title="statement not covered" >              creatEffAnime('5', 360, 360, 320, 320, 9</span>9, 'em', 0.65);
+<span class="cstat-no" title="statement not covered" >            }</span>
+            // else if (emEffect === 2) {
+            //   creatEffAnime('3', 70, 1210, 140, 140, 99, 'my', 0.3);
+<span class="cstat-no" title="statement not covered" >            // }</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          if (<span class="cstat-no" title="statement not covered" >DefendPow &gt; 0) {</span>
+            creatEf<span class="cstat-no" title="statement not covered" >fAnime('3', 70, 1210, 140, 140, 99, 'my', 0.3);</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          if (AttackAddHP &gt; 0) {
+            creatEffAnime('6', 70, 1210, 140, 140, 100, 'my', 0.3);
+          }
+        } <span class="cstat-no" title="statement not covered" >else {</span>
+          cr<span class="cstat-no" title="statement not covered" >eatEffAnime('0', 360, 931, 320, 320, 100, 'my');</span>
+          let <span class="cstat-no" title="statement not covered" >AttackPow = that.battleData.EmBattleData[battleInf</span>o.turn][0];
+          let Defen<span class="cstat-no" title="statement not covered" >dPow = that.battleData.EmBattleData[battleInfo.turn][2];</span>
+          let <span class="cstat-no" title="statement not covered" >AttackAddHP = that.battleData.EmBattleData[battleI</span>nfo.turn][4];
+          const Att<span class="cstat-no" title="statement not covered" >ackCanSkill = that.battleData.EmBattleData[battleInfo.turn][9];</span>
+          cons<span class="cstat-no" title="statement not covered" >t DefendCanSkill = that.battleData.EmBattleData[battleIn</span>fo.turn][10];
+          if (DefendPow || AttackAddHP) {
+            let myText = AttackAddHP - DefendPow;
+            let textColor = 0xff4c4c;
+            if (myText &gt; 0) {
+              textColor = 0x14a774;
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            if (myText !== 0) {</span>
+              let fuhao = '';
+<span class="cstat-no" title="statement not covered" >              if (myText &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                fuhao = '+';</span>
+              }
+              sprites['emHPText'].style = { fontSize: 36, fill: textColor, align: 'right' };
+<span class="cstat-no" title="statement not covered" >              sprites['emHPText'].text = fuhao + myText;</span>
+              sprites['emHP<span class="cstat-no" title="statement not covered" >Text'].alpha = 1;</span>
+            }<span class="cstat-no" title="statement not covered" ></span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          sprites['myHPText'].st<span class="cstat-no" title="statement not covered" >yle = { fontSize: 36, fill: 0xff4c4c, align: 'rig</span>ht' };
+          sprites['myHPText'].te<span class="cstat-no" title="statement not covered" >xt = '-' + AttackPow;</span>
+<span class="cstat-no" title="statement not covered" >          sprites['myHPText'].alpha = 1;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+          if (AttackCanSkill)<span class="cstat-no" title="statement not covered" > {</span>
+<span class="cstat-no" title="statement not covered" >            if (emEffect === 1) {</span>
+<span class="cstat-no" title="statement not covered" >              creatEffAnime('4', 360,</span> 931, 320, 320, 100, 'my', 0.65, 0.3);
+            } else if (emEffect === 7) {
+<span class="cstat-no" title="statement not covered" >              creatEffAnime('4', 360, 931, 320, 320, 100, 'my', 0.65);</span>
+            }<span class="cstat-no" title="statement not covered" ></span>
+            //<span class="cstat-no" title="statement not covered" > else if (emEffect === 4) {</span>
+            //  <span class="cstat-no" title="statement not covered" > creatEffAnime</span>('6', 70, 70, 140, 140, 100, 'em');
+            // }
+          }<span class="cstat-no" title="statement not covered" ></span>
+          if (<span class="cstat-no" title="statement not covered" >DefendCanSkill) {</span>
+            if<span class="cstat-no" title="statement not covered" > (myEffect === 3) {</span>
+              creatEffAnime('2', 360, 931, 320, 320, 99, 'my');
+            } else if (myEffect === 7) {
+<span class="cstat-no" title="statement not covered" >              creatEffAnime('2', 360, 931, 320, 320, 99, 'my');</span>
+<span class="cstat-no" title="statement not covered" >            } else if (myEffect === 6) {</span>
+<span class="cstat-no" title="statement not covered" >              creatEffAnime('5', 360, 931</span>, 320, 320, 99, 'my', 0.65);
+            }
+<span class="cstat-no" title="statement not covered" >            // else if (myEffect === 2) {</span>
+<span class="cstat-no" title="statement not covered" >            //   creatEffAnime('3', 70, 70, 140, 140, 99, 'em', 0.3);</span>
+            //<span class="cstat-no" title="statement not covered" > }</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          if (<span class="cstat-no" title="statement not covered" >DefendPow &gt; 0) {</span>
+            creatEffAnime('3', 70, 70, 140, 140, 99, 'em', 0.3);
+          }
+          if (AttackAddHP &gt; 0) {
+            creatEffAnime('6', 70, 70, 140, 140, 100, 'em');
+          }
+        }<span class="cstat-no" title="statement not covered" ></span>
+        // /<span class="cstat-no" title="statement not covered" >/ 我方攻击前</span>
+        //    <span class="cstat-no" title="statement not covered" > if(emEffect!==5){</span>
+        //         <span class="cstat-no" title="statement not covered" >if(myEffect===1){</span>
+        //    <span class="cstat-no" title="statement not covered" >         creatEffAnime('4',360,360,192,192,100,'em</span>');
+        //         <span class="cstat-no" title="statement not covered" >}else if(myEffect===7){</span>
+        //    <span class="cstat-no" title="statement not covered" >         creatEffAnime('4',360,360,192,192,100,'em');</span>
+        //         }else if(myEffect===4){
+        //             creatEffAnime('6',70,1210,140,140,100,'my');
+        //         }
+        //     }
+        //     // 防守方接受攻击前
+        //<span class="cstat-no" title="statement not covered" >     if(myEffect!==5){</span>
+        //  <span class="cstat-no" title="statement not covered" >       if(emEffect===3){</span>
+        //             creatEffAnime('2',360,360,192,192,99,'em');
+        //<span class="cstat-no" title="statement not covered" >         }else if(emEffect===7){</span>
+        //  <span class="cstat-no" title="statement not covered" >           creatEffAnime('2',360,360,192,192,99,'</span>em');
+        //         }else if(emEffect===6){
+        //             creatEffAnime('5',360,360,192,192,99,'em');
+        //         }else if(emEffect===2){
+        //             creatEffAnime('3',70,1210,140,140,99,'my');
+        //         }
+        //     }
+        // }else{
+        //     if(myEffect!==5){
+        //         if(emEffect===1){
+        //             creatEffAnime('4',360,931,192,192,100,'my');
+        //         }else if(emEffect===7){
+        //             creatEffAnime('4',360,931,192,192,100,'my');
+        //         }else if(emEffect===4){
+        //             creatEffAnime('6',70,70,140,140,100,'em');
+        //         }
+        //     }
+        //     if(emEffect!==5){
+        //         if(myEffect===3){
+        //             creatEffAnime('2',360,931,192,192,99,'my');
+        //         }else if(myEffect===7){
+        //             creatEffAnime('2',360,931,192,192,99,'my');
+        //         }else if(myEffect===6){
+        //             creatEffAnime('5',360,931,192,192,99,'my');
+        //         }else if(myEffect===2){
+        //             creatEffAnime('3',70,70,140,140,99,'em');
+        //         }
+        //     }
+        // }
+      }
+      // 减SAN
+      let mySANW = 1;
+      let emSANW = 1;
+      function SANCount () {
+        let hpFullWidth = 564;//血条长度;
+        setEffanime();
+        if (battleInfo.battleUser == 1) {
+          battleSenceItem.mySAN.text = 'SAN:' + that.battleData.MyBattleData[battleInfo.turn][1];
+          battleSenceItem.emSAN.text = 'SAN:' + that.battleData.MyBattleData[battleInfo.turn][3];
+&nbsp;
+          mySANW = hpFullWidth * (that.battleData.MyBattleData[battleInfo.turn][1] / that.battleData.MyADSHP[3]);
+          if (mySANW &gt; hpFullWidth) {
+            mySANW = hpFullWidth;
+          }
+&nbsp;
+          emSANW = hpFullWidth * (that.battleData.MyBattleData[battleInfo.turn][3] / that.battleData.EmADSHP[3]);
+          if (emSANW &gt; hpFullWidth) {
+            emSANW = hpFullWidth;
+          }
+          // 画我的血条<span class="cstat-no" title="statement not covered" ></span>
+          battleSen<span class="cstat-no" title="statement not covered" >ce</span>Item.myBgSanA.clear();
+          battl<span class="fstat-no" title="function not covered" >eSenceIte</span>m.myBgSanA.beginFill(0xfee140);
+          battleSenceItem.<span class="cstat-no" title="statement not covered" >myBg</span>SanA.drawRect(136, 1233, mySANW, 27);
+<span class="cstat-no" title="statement not covered" >          battleSenceIt</span>em.myBgSanA.endFill();
+<span class="cstat-no" title="statement not covered" >          // 画他的血条</span>
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.emBgSanA.clear();</span>
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.emBgSanA.beginFill(0xfee140);</span>
+          battleSenceItem.emBgSanA.drawRect(136, 94, emSANW, 27);
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.emBgSanA.endFill();</span>
+<span class="cstat-no" title="statement not covered" ></span>
+        } el<span class="cstat-no" title="statement not covered" >se {</span>
+          battleSenceItem.mySAN.text = 'SAN:' + that.battleData.EmBattleData[battleInfo.turn][3];
+          battleSenceItem.emSAN.text = 'SAN:' + that.battleData.EmBattleData[battleInfo.turn][1];
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          mySANW = hpFullWidth * (that.battleData.EmBattleData[battleInfo.turn][3] / that.battleData.MyADSHP[3]);</span>
+          if<span class="cstat-no" title="statement not covered" > (mySANW &gt; hpFullWidth</span>) {
+            mySANW = hpFullWidth;
+          }
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          emSANW = hpFullWidth * (that.battleData.EmBatt</span>leData[battleInfo.turn][1] / that.battleData.EmADSHP[3]);
+<span class="cstat-no" title="statement not covered" >          if (emSANW &gt; hpFullWidth) {</span>
+<span class="cstat-no" title="statement not covered" >            emSANW = hpFullWidth;</span>
+          }
+<span class="cstat-no" title="statement not covered" >          // 画我的血条</span>
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.myBgSanA.clear();</span>
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.myBgSanA.beginFill(0xfee140);</span>
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.myBgSanA.drawRect(13</span>6, 1233, mySANW, 27);
+          battleSenceItem.myBgSanA.endFill();
+<span class="cstat-no" title="statement not covered" >          // 画他的血条</span>
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.emBgSanA.clear();</span>
+          battleSenceItem.emBgSanA.beginFill(0xfee140);
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.emBgSanA.drawRect(136, 94, emSANW, 27);</span>
+<span class="cstat-no" title="statement not covered" >          battleSenceItem.emBgSanA.endFill();</span>
+        }<span class="cstat-no" title="statement not covered" ></span>
+      }
+      function cardUseSkill () {
+        le<span class="cstat-no" title="statement not covered" >t myCard = sprites['mycard'][that.battleData.MyBattleCard[battleInfo.turn]];</span>
+        le<span class="cstat-no" title="statement not covered" >t emCard = sprites['emcard'][that.battleData.EmBattleCard[battleInfo.turn]];</span>
+        if (<span class="cstat-no" title="statement not covered" >battleInfo.battleUser </span>== 1) {
+          if (battleInfo.indexCache === null) {
+            battleInfo.indexCache = myCard.zIndex;
+<span class="cstat-no" title="statement not covered" >            myCard.zIndex = 99;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          if (!battleInfo.turnStep.attacked) {</span>
+<span class="cstat-no" title="statement not covered" >            let animed = cardAnime(myCard, 'y'</span>, 360, -50);
+            if (animed) {
+<span class="cstat-no" title="statement not covered" >              battleInfo.turnStep.attacked =</span> animed;
+<span class="cstat-no" title="statement not covered" >              SANCount();</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          } else {</span>
+            let animed = cardAnime(myCard, 'y', 922, 50);
+            if (animed) {
+              m<span class="fstat-no" title="function not covered" >yCard.zIndex </span>= battleInfo.indexCache;
+              battleI<span class="cstat-no" title="statement not covered" >nfo.indexCache = null;</span>
+              if (myS<span class="cstat-no" title="statement not covered" >ANW == 0 || emSANW == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                battleInfo.gameOver = true;</span>
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              battleInfo.turnEnd</span>Flag++;
+              if (battleInfo.battleUser == 1) {
+<span class="cstat-no" title="statement not covered" >                battleInfo.battleUser = 0;</span>
+              } else {<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                battleInfo.battleUser = 1;</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              battleInfo.t</span>urnStep.attacked = false;
+            }
+          }
+        } else {<span class="cstat-no" title="statement not covered" ></span>
+          if<span class="cstat-no" title="statement not covered" > (battleInfo.indexCache === null) {</span>
+            ba<span class="cstat-no" title="statement not covered" >ttleInfo.indexCache = emCard.zIndex;</span>
+            em<span class="cstat-no" title="statement not covered" >Card.zIndex = 99;</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+          if (!b<span class="cstat-no" title="statement not covered" >attleInfo.turnStep.attacked)</span> {
+            let <span class="cstat-no" title="statement not covered" >animed = cardA</span>nime(emCard, 'y', 922, 50);
+            if (animed) {
+<span class="cstat-no" title="statement not covered" >              battleInfo.turnStep.attack</span>ed = animed;
+<span class="cstat-no" title="statement not covered" >              SANCount();</span>
+            }<span class="cstat-no" title="statement not covered" ></span>
+          } else {
+            let <span class="cstat-no" title="statement not covered" >animed = cardAnime(emCard, </span>'y', 360, -50);
+            if (animed &amp;&amp; !battleInfo.gameOver) {
+<span class="cstat-no" title="statement not covered" >              emCard.zIndex = battleInfo.indexCache;</span>
+              battleInfo.indexCache = null;
+              if (mySANW == 0 || emSANW == 0) {
+                battleInfo.gameOver = true;
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              battleInfo.turnEnd</span>Flag++;
+              if (battleInfo.battleUser == 1) {
+<span class="cstat-no" title="statement not covered" >                battleInfo.battleUser = 0;</span>
+              } else {<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                battleInfo.battleUser = 1;</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              battleInfo.t</span>urnStep.attacked = false;
+            }
+          }
+        }<span class="cstat-no" title="statement not covered" ></span>
+      }<span class="cstat-no" title="statement not covered" ></span>
+      function<span class="cstat-no" title="statement not covered" > cardEnter () {</span>
+        let my<span class="cstat-no" title="statement not covered" >Card = sprites['mycard'][that.</span>battleData.MyBattleCard[battleInfo.turn]];
+        let em<span class="cstat-no" title="statement not covered" >Card = sprites['emcard'][that.battleData.EmBattleCard[battleInfo.turn]];</span>
+        myCard.z<span class="cstat-no" title="statement not covered" >Index = battleInfo.turn;</span>
+        emCard.z<span class="cstat-no" title="statement not covered" >Index = battle</span>Info.turn;
+        if (myCard.x != 360) {
+          myCa<span class="cstat-no" title="statement not covered" >rd.x += 20;</span>
+          emCa<span class="cstat-no" title="statement not covered" >rd.x -= 20;</span>
+        } else {<span class="cstat-no" title="statement not covered" ></span>
+          timerCount++
+          if (ti<span class="cstat-no" title="statement not covered" >merCount &gt; 30) {</span>
+            timerCount = 0;
+            if<span class="cstat-no" title="statement not covered" > (battleInfo.turn &gt;= 2) {</span>
+              // 缓解精灵太多卡顿
+              sprites['mycard'][that.battleData.MyBattleCard[battleInfo.turn - 2]].destroy();
+              sprites['emcard'][that.battleData.EmBattleCard[battleInfo.turn - 2]].destroy();
+            }
+            if <span class="fstat-no" title="function not covered" >(battleInf</span>o.turn &lt; (that.battleData.MyBattleCard.length - 1) || battleInfo.turn &lt; (that.battleData.EmBattleCard.length - 1)) {
+              // 准备下一<span class="cstat-no" title="statement not covered" >回合的卡牌</span>
+              battleS<span class="cstat-no" title="statement not covered" >ence.addChild(sprites['mycard'][that.battleData.MyBattleCard[batt</span>leInfo.turn + 1]]);
+<span class="cstat-no" title="statement not covered" >              battleSence.addChild(sprite</span>s['emcard'][that.battleData.EmBattleCard[battleInfo.turn + 1]]);
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            battleInfo.cardEnter = false;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+        }<span class="cstat-no" title="statement not covered" ></span>
+      }
+      // 切<span class="cstat-no" title="statement not covered" >换场景的淡入淡出</span>
+      func<span class="cstat-no" title="statement not covered" >tion sencenChange (a, b) {</span>
+        if (<span class="cstat-no" title="statement not covered" >a.visible &amp;&amp; !b.</span>visible) {
+          a.<span class="cstat-no" title="statement not covered" >alpha -= 0.05;</span>
+          if (a.alpha &lt;= 0) {
+            b.<span class="cstat-no" title="statement not covered" >visible = true;</span>
+          }<span class="cstat-no" title="statement not covered" ></span>
+        } else if (b.visible) {
+          if<span class="cstat-no" title="statement not covered" > (b.alpha &lt; 1) {</span>
+            b.alpha += 0.05;
+          } el<span class="cstat-no" title="statement not covered" >se {</span>
+            a.<span class="cstat-no" title="statement not covered" >visible = false;</span>
+            a.destroy();
+<span class="cstat-no" title="statement not covered" >            senceChangeFlag = false;</span>
+          }
+        }
+      }
+      let myInfoContainer = new PIXI.Container();//我信息组容器
+      let emInf<span class="fstat-no" title="function not covered" >oContainer = </span>new PIXI.Container();//他信息组容器
+      fu<span class="cstat-no" title="statement not covered" >nction initGameStartSence (resources) {</span>
+        le<span class="cstat-no" title="statement not covered" >t battleVS = new </span>PIXI.Text('VS', { fontFamily: 'Arial', fontSize: 56, fill: 0xffffff, align: 'center' });//VS字体
+        le<span class="cstat-no" title="statement not covered" >t myAvatarSprite = new PIXI.Sprite(resources['myAvatar']['texture']);//我的头像</span>
+        let <span class="cstat-no" title="statement not covered" >myNickname = new P</span>IXI.Text(that.battleData.MyName, { fontFamily: 'Arial', fontSize: 26, fill: 0xffffff, align: 'center' });//昵称
+        // 对方的头像和信息
+        let emA<span class="cstat-no" title="statement not covered" >vatarSprite = new PIXI.Sprite(resources['emAvatar']['texture']);//我的头像</span>
+        le<span class="cstat-no" title="statement not covered" >t emNickname = new PIXI.Text(that.battleData.EmName, { fontFamily: 'Arial', fontSize: 26, fill: 0xffffff, align: 'center' });//昵称</span>
+        // 头<span class="cstat-no" title="statement not covered" >像和昵称中心点</span>
+        myAvatarSprite.anchor.set(0.5);
+        myNi<span class="cstat-no" title="statement not covered" >ckname.anchor.set(0</span>.5);
+        myNi<span class="cstat-no" title="statement not covered" >ckname.positi</span>on.set(0, 80);
+        // 将<span class="cstat-no" title="statement not covered" >头像和昵称塞入容器</span>
+        myInfoContainer.addChild(myAvatarSprite);
+        myInfoContainer.addChild(myNickname);
+        // 设置容器坐标
+        myInfoContainer.alph<span class="cstat-no" title="statement not covered" >a = 0;</span>
+        myInfoContainer.posi<span class="cstat-no" title="statement not covered" >tion.set(0, 810);</span>
+        // 插入到场<span class="fstat-no" title="function not covered" >景</span>
+        battleStartSenc<span class="cstat-no" title="statement not covered" >e.addChild(myInfoContainer);</span>
+        // 设置VS字样坐标并插入场景<span class="cstat-no" title="statement not covered" ></span>
+        battleVS.anchor.s<span class="cstat-no" title="statement not covered" >et(0.5);</span>
+        battleVS.position.set(360, 640);
+        battleStartSence.addC<span class="cstat-no" title="statement not covered" >hild(battleVS);</span>
+        // 对方头像和昵称中心点<span class="cstat-no" title="statement not covered" ></span>
+        emAvatarSprite.anchor.set(0.5);
+<span class="cstat-no" title="statement not covered" >        emNickname.anchor.set(0.5);</span>
+<span class="cstat-no" title="statement not covered" >        emNickname.position.set(0, 8</span>0);
+<span class="cstat-no" title="statement not covered" >        // 将对方头像和昵称塞入容器</span>
+        emInfoContainer.addChild(emAvatarSprite);
+<span class="cstat-no" title="statement not covered" >        emInfoContainer.addChild(emNickname);</span>
+<span class="cstat-no" title="statement not covered" >        // 设置容器坐标</span>
+        emInfoContainer.alpha = 0;
+<span class="cstat-no" title="statement not covered" >        emInfoContainer.position.se</span>t(720, 440);
+<span class="cstat-no" title="statement not covered" >        // 插入到场景</span>
+        battleStartSence.addChild(emInfoContainer);
+<span class="cstat-no" title="statement not covered" ></span>
+      }
+      fu<span class="cstat-no" title="statement not covered" >nction gameStartAnime () {</span>
+<span class="cstat-no" title="statement not covered" >        if (timerCount &gt;= 30) {</span>
+<span class="cstat-no" title="statement not covered" >          senceChangeFlag = true;</span>
+          timerCount = 0;
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (myInfoContainer.alpha &lt; </span>1) {
+<span class="cstat-no" title="statement not covered" >          myInfoContainer.alpha += 0.1;</span>
+          emInfoContainer.alpha += 0.1;
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (emInfoContainer.position.x === 360</span> || myInfoContainer.position.x === 360) {
+          timerCount += 1;
+<span class="cstat-no" title="statement not covered" >          return false;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+        emInfoContainer.position.x -= 10;
+<span class="cstat-no" title="statement not covered" >        myInfoContainer.position.x += 10;</span>
+      }
+      // 动画<span class="fstat-no" title="function not covered" ></span>
+      ap<span class="cstat-no" title="statement not covered" >p.ticker.add((delta) =&gt; {</span>
+        //<span class="cstat-no" title="statement not covered" > 如果还在加载则使用加载动画</span>
+        if<span class="cstat-no" title="statement not covered" > (loadingSence.v</span>isible) {
+          if (loadingText.alpha &gt;= 1) {
+<span class="cstat-no" title="statement not covered" >            loadingText.alpha -= 0.01 * delta;</span>
+<span class="cstat-no" title="statement not covered" >            loadingAlphUp = false;</span>
+<span class="cstat-no" title="statement not covered" >          } else if (loadingText.alpha &lt;</span>= 0.5) {
+            loadingText.alpha += 0.01 * delta;
+<span class="cstat-no" title="statement not covered" >            loadingAlphUp = true;</span>
+<span class="cstat-no" title="statement not covered" >          } else {</span>
+<span class="cstat-no" title="statement not covered" >            if (loadingA</span>lphUp) {
+              loadingText.alpha += 0.01 * delta;
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >              loadingText.alpha -= 0.01 * </span>delta;
+            }
+          }
+<span class="cstat-no" title="statement not covered" >        } else if (ba<span class="fstat-no" title="function not covered" >tt</span>leStartSence.visible) {</span>
+          // 战斗开始动画
+<span class="cstat-no" title="statement not covered" >          gameStartAnime();</span>
+<span class="cstat-no" title="statement not covered" >          // app.destroy(true);</span>
+        } el<span class="cstat-no" title="statement not covered" >se if (battleSence.visible) {</span>
+          //<span class="cstat-no" title="statement not covered" > 战斗动画</span>
+          drawBat<span class="cstat-no" title="statement not covered" >tle();</span>
+        } el<span class="cstat-no" title="statement not covered" >se if (battleEndSence.visible) {</span>
+          th<span class="cstat-no" title="statement not covered" >is.canClose = true;</span>
+          timerCount++
+          if<span class="cstat-no" title="statement not covered" > (timerCount &gt; 180) {</span>
+            th<span class="cstat-no" title="statement not covered" >is.canClose = false;</span>
+            this.$emit('gameover');
+            ti<span class="cstat-no" title="statement not covered" >merCount = 0;</span>
+          }
+        }
+        // 换场<span class="cstat-no" title="statement not covered" ></span>
+        if (senceChangeFlag) {
+<span class="cstat-no" title="statement not covered" >          if (loadingSence.v</span>isible) {
+            sencenChange(loadingSence, battleStartSence);
+          } els<span class="cstat-no" title="statement not covered" >e if (battleStartSence.visible) {</span>
+            sencenChange(battleStartSence, battleSence);
+<span class="cstat-no" title="statement not covered" >          } else if (bat</span>tleSence.visible) {
+            sen<span class="cstat-no" title="statement not covered" >cenChange(battleSence, battleEndSence);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+        }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+      });<span class="cstat-no" title="statement not covered" ></span>
+    }<span class="cstat-no" title="statement not covered" ></span>
+  },<span class="cstat-no" title="statement not covered" ></span>
+  beforeDestroy () {
+    this.app.destroy(true);
+  }
+}<span class="cstat-no" title="statement not covered" ></span>
+&lt;/script&gt;<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+&lt;style lang="styl<span class="cstat-no" title="statement not covered" >us"&gt;</span>
+.wm_battle_b<span class="cstat-no" title="statement not covered" >ody {</span>
+  height: 100vh;<span class="cstat-no" title="statement not covered" ></span>
+  width: 100<span class="cstat-no" title="statement not covered" >vw;</span>
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9998;
+  background: #000;
+}<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+.wm_battle_body canvas {
+  max-width: 100%;
+  max-height: 100%;
+<span class="cstat-no" title="statement not covered" >  width: auto;<span class="cstat-no" title="statement not covered" ></span></span>
+  height: auto;<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  margin: 0 auto;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+.wm_battle_box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+}
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

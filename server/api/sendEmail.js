@@ -34,6 +34,7 @@ module.exports = async function(req, res, next){
             return false;
         }
         email = email.toLowerCase();
+        /*
         if(req.session.captcha!=captcha || !captcha){
             req.session.destroy((err)=> {
                 if(err){
@@ -58,6 +59,8 @@ module.exports = async function(req, res, next){
                 );
             }
         })
+
+         */
         let emailCodeData = null;
         emailCodeData = await emailCodeModel.findOne({ email: email }, function(err, result) {
             if (err) {

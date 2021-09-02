@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for utils/live2d/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">utils/live2d</a> index.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as P<span class="cstat-no" title="statement not covered" >IXI from 'pixi.js'<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+import LAppModel <span class="cstat-no" title="statement not covered" >from './lib/LAppModel';<span class="cstat-no" title="statement not covered" ></span></span>
+import { Live2DFramewor<span class="cstat-no" title="statement not covered" >k, L2DTargetPoint, L2DViewMatrix,</span> L2DMatrix44 } from './lib/Live2DFramework';
+import MatrixStack <span class="cstat-no" title="statement not covered" >from './lib/MatrixStack';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+&nbsp;
+/**
+ * @class
+ * @memberof PIXI
+ * @param modelDefine {object} Content of {name}.model.js file
+ * @param [options] {object} The optional parameters
+ * @param [options.eyeBlink=true] {boolean}
+ * @param [options.lipSyncWithSound=true] {boolean}
+ * @param [options.debugLog=false] {boolean}
+ * @param [options.debugMouseLog=false] {boolean}
+ * @param [options.randomMotion=true] {boolean}
+ * @param [options.defaultMotionGroup="idle"] {string}
+ * @param [options.priorityDefault=1] {number}
+ * @param [options.priorityForce=3] {number}
+ * @param [options.audioPlayer=3] {function} Custom audio player, pass (filename, rootPath) as parameters
+ *
+ */
+export default <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >cl</span>ass Live2DSprite extend<span class="cstat-no" title="statement not covered" >s PIXI.Sprite {</span></span>
+  construct<span class="fstat-no" title="function not covered" >or(modelDefin</span>e, options) {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+    super();
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.interactive = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.platform = window.navigator.platform.toLowerCase();</span>
+&nbsp;
+    const fullOptions <span class="cstat-no" title="statement not covered" >= Object.assign({</span>
+      priorityForce: 3,
+      priorityDefault: 1,
+      debugLog: false,
+      debugMouseLog: false,
+      eyeBlink: true,
+      lipSyncWithSound: true,
+      randomMotion: true,
+      defaultMotionGroup: "idle",
+      audioPlayer: null
+    }, options);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    Live2D.init();</span>
+<span class="cstat-no" title="statement not covered" >    this.model = new LAppModel(fullOptions);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.gl = null;</span>
+<span class="cstat-no" title="statement not covered" >    this.canvas = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.dragMgr = null; /</span>*new L2DTargetPoint();*/
+<span class="cstat-no" title="statement not covered" >    this.viewMatrix = null; /</span>*new L2DViewMatrix();*/
+<span class="cstat-no" title="statement not covered" >    this.projMatrix = null; /</span>*new L2DMatrix44()*/
+<span class="cstat-no" title="statement not covered" >    this.deviceToScreen = null; /</span>*new L2DMatrix44();*/
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.texture = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.modelReady = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.onModelReady = [];</span>
+<span class="cstat-no" title="statement not covered" >    this.modelDefine = modelDefine;<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+  }
+&nbsp;
+  /**
+   * @private
+   */<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+  init() {<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+&nbsp;
+    var width = th<span class="cstat-no" title="statement not covered" >is.canvas.width;</span>
+    var height = th<span class="cstat-no" title="statement not covered" >is.canvas.height;</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.texture = PIXI.RenderTexture.create(width, height);</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.canvasWidth = this.canvas.width;</span>
+    th<span class="cstat-no" title="statement not covered" >is.canvasHeight = this.canvas.height;</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.dragMgr = new L2DTargetPoint();</span>
+&nbsp;
+    var ratio = he<span class="cstat-no" title="statement not covered" >ight / width;</span>
+    var left = -1<span class="cstat-no" title="statement not covered" >;</span>
+    var right = 1;<span class="cstat-no" title="statement not covered" ></span>
+    var bottom = -r<span class="cstat-no" title="statement not covered" >atio;</span>
+    var top = ra<span class="cstat-no" title="statement not covered" >tio;</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.viewMatrix = new L2DViewMatrix();</span>
+    th<span class="cstat-no" title="statement not covered" >is.viewMatrix.setMaxScreenRect(-2, 2, -2, 2);</span>
+    th<span class="cstat-no" title="statement not covered" >is.viewMatrix.setScreenRect(left, right, bottom, top);</span>
+    // this.viewMatrix.setMaxScale(2);
+    // this.viewMatrix.setMinScale(0.5);
+    // this.viewMatrix.adjustScale(0, 0, 0.7);
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.projMatrix = new L2DMatrix44();</span>
+    th<span class="cstat-no" title="statement not covered" >is.projMatrix.multScale(ratio, 1);  /</span>/ flip for rtt
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.deviceToScreen = new L2DMatrix44();</span>
+    th<span class="cstat-no" title="statement not covered" >is.deviceToScreen.multTranslate( -width / 2.0, -height / 2.0);</span>
+    th<span class="cstat-no" title="statement not covered" >is.deviceToScreen.multScale(2 / width, -2 / height);</span>
+&nbsp;
+    Li<span class="cstat-no" title="statement not covered" >ve2D.setGL(this.gl);</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.x = width / 2;</span>
+    th<span class="cstat-no" title="statement not covered" >is.y = height / 2;</span>
+    th<span class="cstat-no" title="statement not covered" >is.anchor.x = 0.5;</span>
+    th<span class="cstat-no" title="statement not covered" >is.anchor.y = 0.5;</span>
+    th<span class="cstat-no" title="statement not covered" >is.scale.y = -1;</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.gl.clearColor(0.0, 0.0, 0.0, 0.0);</span>
+    th<span class="cstat-no" title="statement not covered" >is.model.load(this.gl, this.modelDefine, ()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.modelReady = true;</span>
+    });
+  }
+&nbsp;
+  /**
+   * @private
+   */<span class="fstat-no" title="function not covered" ></span>
+  draw() {
+    Ma<span class="cstat-no" title="statement not covered" >trixStack.reset();</span>
+    Ma<span class="cstat-no" title="statement not covered" >trixStack.loadIdentity();</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.dragMgr.update();</span>
+    th<span class="cstat-no" title="statement not covered" >is.model.setDrag(this.dragMgr.getX(), this.dragMgr.getY());</span>
+&nbsp;
+    // this.viewMatrix.adjustTranslate(-this.x / this.canvasWidth, -this.y / this.canvasHeight);
+    // this.viewMatrix.adjustScale(this.anchor.x, this.anchor.y, this.scale.x, this.scale.y);
+&nbsp;
+    Ma<span class="cstat-no" title="statement not covered" >trixStack.multMatrix(this.projMatrix.getArray());</span>
+    Ma<span class="cstat-no" title="statement not covered" >trixStack.multMatrix(this.viewMatrix.getArray());</span>
+    // MatrixStack.multMatrix(this.deviceToScreen.getArray());
+    Ma<span class="cstat-no" title="statement not covered" >trixStack.push();</span>
+&nbsp;
+    th<span class="cstat-no" title="statement not covered" >is.model.update();</span>
+    th<span class="cstat-no" title="statement not covered" >is.model.draw(this.gl);</span>
+&nbsp;
+    Ma<span class="cstat-no" title="statement not covered" >trixStack.pop();</span>
+  }<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+  _render(renderer) {
+    if<span class="cstat-no" title="statement not covered" > (!this.gl) {</span>
+      th<span class="cstat-no" title="statement not covered" >is.gl = renderer.gl;</span>
+      th<span class="cstat-no" title="statement not covered" >is.canvas = renderer.view;</span>
+      th<span class="cstat-no" title="statement not covered" >is.modelDefine &amp;&amp; this.init(this.modelDefine);</span>
+    }
+&nbsp;
+    if<span class="cstat-no" title="statement not covered" > (!this.modelReady) {</span>
+      const gl = r<span class="cstat-no" title="statement not covered" >enderer.gl;</span>
+      // it is unreasonable how the next line works...😂
+      gl<span class="cstat-no" title="statement not covered" >.activeTexture(gl.TEXTURE0);</span>
+      re<span class="cstat-no" title="statement not covered" >turn;</span>
+    }
+&nbsp;
+    wh<span class="cstat-no" title="statement not covered" >ile (this.onModelReady.length) {</span>
+      const func = <span class="cstat-no" title="statement not covered" >this.onModelReady.shift();</span>
+      fu<span class="cstat-no" title="statement not covered" >nc();</span>
+    }
+&nbsp;
+    if<span class="cstat-no" title="statement not covered" > (!this.visible) {</span>
+      re<span class="cstat-no" title="statement not covered" >turn;</span>
+    }
+&nbsp;
+    const useVAO = <span class="cstat-no" title="statement not covered" >!!(renderer.createVao &amp;&amp; renderer.bindVao);</span>
+&nbsp;
+    // let _activeVao;
+    // if (useVAO) {
+    //   _activeVao = renderer._activeVao;
+    // } else {
+    //   renderer.clear();
+    // }
+&nbsp;
+    re<span class="cstat-no" title="statement not covered" >nderer.clear();</span>
+    
+    const gl = <span class="cstat-no" title="statement not covered" >renderer.gl;</span>
+&nbsp;
+    const arrayBuffer = <span class="cstat-no" title="statement not covered" >gl.getParameter(gl.ARRAY_BUFFER_BINDING);</span>
+    const elementArrayBuffer = <span class="cstat-no" title="statement not covered" >gl.getParameter(gl.ELEMENT_ARRAY_BUFFER_BINDING);</span>
+    const currentProgram = <span class="cstat-no" title="statement not covered" >gl.getParameter(gl.CURRENT_PROGRAM);</span>
+&nbsp;
+    let activeTexture;<span class="cstat-no" title="statement not covered" ></span>
+    if<span class="cstat-no" title="statement not covered" > (!useVAO) {</span>
+      ac<span class="cstat-no" title="statement not covered" >tiveTexture = gl.getParameter(gl.ACTIVE_TEXTURE);</span>
+    }
+&nbsp;
+    gl<span class="cstat-no" title="statement not covered" >.activeTexture(gl.TEXTURE0);</span>
+    const texture0 = <span class="cstat-no" title="statement not covered" >gl.getParameter(gl.TEXTURE_BINDING_2D);</span>
+    gl<span class="cstat-no" title="statement not covered" >.activeTexture(gl.TEXTURE1);</span>
+    const texture1 = <span class="cstat-no" title="statement not covered" >gl.getParameter(gl.TEXTURE_BINDING_2D);</span>
+&nbsp;
+    const frontFace = <span class="cstat-no" title="statement not covered" >gl.getParameter(gl.FRONT_FACE);</span>
+    const colorWhiteMask = <span class="cstat-no" title="statement not covered" >gl.getParameter(gl.COLOR_WRITEMASK);</span>
+&nbsp;
+    let vertexAttr0Enabled, ver<span class="cstat-no" title="statement not covered" >texAttr</span>1Enabled, vertexAttr2<span class="cstat-no" title="statement not covered" >Enabled</span>, vertexAttr3Enabled;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+    if<span class="cstat-no" title="statement not covered" > (!useVAO) {</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr0Enabled = gl.getVertexAttrib(0, gl.VERTEX_ATTRIB_ARRAY_ENABLED);</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr1Enabled = gl.getVertexAttrib(1, gl.VERTEX_ATTRIB_ARRAY_ENABLED);</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr2Enabled = gl.getVertexAttrib(2, gl.VERTEX_ATTRIB_ARRAY_ENABLED);</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr3Enabled = gl.getVertexAttrib(3, gl.VERTEX_ATTRIB_ARRAY_ENABLED);</span>
+    }
+    const scissorTestEnabled = <span class="cstat-no" title="statement not covered" >gl.isEnabled(gl.SCISSOR_TEST);</span>
+    const stencilTestEnabled = <span class="cstat-no" title="statement not covered" >gl.isEnabled(gl.STENCIL_TEST);</span>
+    const depthTestEnabled = <span class="cstat-no" title="statement not covered" >gl.isEnabled(gl.DEPTH_TEST);</span>
+    const cullFaceEnabled = <span class="cstat-no" title="statement not covered" >gl.isEnabled(gl.CULL_FACE);</span>
+    const blendEnabled = <span class="cstat-no" title="statement not covered" >gl.isEnabled(gl.BLEND);</span>
+&nbsp;
+    const _activeTextureLocation = <span class="cstat-no" title="statement not covered" >renderer._activeTexture ? renderer._activeTextureLocation : 0;</span>
+    const _activeRenderTarget = <span class="cstat-no" title="statement not covered" >renderer._activeRenderTarget;</span>
+&nbsp;
+    let vao;<span class="cstat-no" title="statement not covered" ></span>
+    if<span class="cstat-no" title="statement not covered" > (useVAO) {</span>
+      va<span class="cstat-no" title="statement not covered" >o = renderer.createVao();</span>
+      re<span class="cstat-no" title="statement not covered" >nderer.bindVao(vao);</span>
+    }
+    // renderer.bindRenderTexture(this.texture);
+    gl<span class="cstat-no" title="statement not covered" >.clearColor(0.0, 0.0, 0.0, 0.0);</span>
+    gl<span class="cstat-no" title="statement not covered" >.clear(gl.COLOR_BUFFER_BIT);</span>
+    gl<span class="cstat-no" title="statement not covered" >.frontFace(gl.CW);</span>
+    th<span class="cstat-no" title="statement not covered" >is.draw();</span>
+    if<span class="cstat-no" title="statement not covered" > (!useVAO) {</span>
+      re<span class="cstat-no" title="statement not covered" >nderer._activeTextureLocation = _activeTextureLocation;</span>
+      gl<span class="cstat-no" title="statement not covered" >.activeTexture(gl.TEXTURE0 + _activeTextureLocation);</span>
+    }
+    gl<span class="cstat-no" title="statement not covered" >.bindTexture(gl.TEXTURE_2D, null);</span>
+    gl<span class="cstat-no" title="statement not covered" >.useProgram(currentProgram);</span>
+    // renderer.bindRenderTarget(_activeRenderTarget);
+&nbsp;
+    gl<span class="cstat-no" title="statement not covered" >.bindBuffer(gl.ARRAY_BUFFER, arrayBuffer);</span>
+    gl<span class="cstat-no" title="statement not covered" >.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, elementArrayBuffer);</span>
+&nbsp;
+    gl<span class="cstat-no" title="statement not covered" >.activeTexture(gl.TEXTURE0);</span>
+    gl<span class="cstat-no" title="statement not covered" >.bindTexture(gl.TEXTURE_2D, texture0);</span>
+    gl<span class="cstat-no" title="statement not covered" >.activeTexture(gl.TEXTURE1);</span>
+    gl<span class="cstat-no" title="statement not covered" >.bindTexture(gl.TEXTURE_2D, texture1);</span>
+&nbsp;
+    if<span class="cstat-no" title="statement not covered" > (!useVAO) {</span>
+      gl<span class="cstat-no" title="statement not covered" >.activeTexture(activeTexture);</span>
+    }
+    gl<span class="cstat-no" title="statement not covered" >.frontFace(frontFace);</span>
+    gl<span class="cstat-no" title="statement not covered" >.colorMask(...colorWhiteMask);</span>
+    //
+    if<span class="cstat-no" title="statement not covered" > (!useVAO) {</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr0Enabled ? gl.enableVertexAttribArray(0) : gl.disableVertexAttribArray(0);</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr1Enabled ? gl.enableVertexAttribArray(1) : gl.disableVertexAttribArray(1);</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr2Enabled ? gl.enableVertexAttribArray(2) : gl.disableVertexAttribArray(2);</span>
+      ve<span class="cstat-no" title="statement not covered" >rtexAttr3Enabled ? gl.enableVertexAttribArray(3) : gl.disableVertexAttribArray(3);</span>
+    }
+    sc<span class="cstat-no" title="statement not covered" >issorTestEnabled ? gl.enable(gl.SCISSOR_TEST) : gl.disable(gl.SCISSOR_TEST);</span>
+    st<span class="cstat-no" title="statement not covered" >encilTestEnabled ? gl.enable(gl.STENCIL_TEST) : gl.disable(gl.STENCIL_TEST);</span>
+    de<span class="cstat-no" title="statement not covered" >pthTestEnabled   ? gl.enable(gl.DEPTH_TEST) : gl.disable(gl.DEPTH_TEST);</span>
+    cu<span class="cstat-no" title="statement not covered" >llFaceEnabled    ? gl.enable(gl.CULL_FACE) : gl.disable(gl.CULL_FACE);</span>
+    bl<span class="cstat-no" title="statement not covered" >endEnabled       ? gl.enable(gl.BLEND) : gl.disable(gl.BLEN</span>D);
+&nbsp;
+    if<span class="cstat-no" title="statement not covered" > (useVAO) {</span>
+      va<span class="cstat-no" title="statement not covered" >o.unbind();</span>
+      va<span class="cstat-no" title="statement not covered" >o.destroy();</span>
+      re<span class="cstat-no" title="statement not covered" >nderer.bindVao(_activeVao);</span>
+    }
+&nbsp;
+    su<span class="cstat-no" title="statement not covered" >per._render(renderer);</span>
+  }<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+  destroy(...args) {
+    th<span class="cstat-no" title="statement not covered" >is.model.release();<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+    su<span class="cstat-no" title="statement not covered" >per.destroy(...args);</span>
+  }<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+  containsPoint(point) {
+    if<span class="cstat-no" title="statement not covered" > (this.modelReady) {</span>
+      re<span class="cstat-no" title="statement not covered" >turn this.hitTest(null, point.x, point.y);</span>
+    }
+    re<span class="cstat-no" title="statement not covered" >turn false;</span>
+  }
+&nbsp;
+  /* Live2D methods */
+&nbsp;
+&nbsp;
+  /* Transforms */<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+  adjustScale(cx, cy, scale) {<span class="cstat-no" title="statement not covered" ></span>
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.viewMatrix.adjustScale(cx, cy, scale);</span>
+    });
+  }<span class="fstat-no" title="function not covered" ></span>
+  adjustTranslate(shiftX, shiftY) <span class="cstat-no" title="statement not covered" >{</span>
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.viewMatrix.adjustTranslate(shiftX, -shiftY);</span>
+    });
+  }
+&nbsp;
+  /**
+   * specify `PARAM_MOUTH_OPEN_Y` of Live2D model.
+   * @param value {Number} between 0~1, set to `null` will disable it.
+   */<span class="fstat-no" title="function not covered" ></span>
+  setLipSync(value) {
+    if<span class="cstat-no" title="statement not covered" > (value === null) {</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.setLipSync(false);</span>
+    } else {
+      th<span class="cstat-no" title="statement not covered" >is.model.setLipSync(true);</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.setLipSyncValue(value);</span>
+    }
+  }<span class="fstat-no" title="function not covered" ></span>
+  setRandomExpress<span class="cstat-no" title="statement not covered" >ion()</span> {
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.setRandomExpression();</span>
+    });
+  }<span class="fstat-no" title="function not covered" ></span>
+  startRandomMotion(name, priority<span class="cstat-no" title="statement not covered" >) {</span>
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.startRandomMotion(name, priority);</span>
+    });
+  }<span class="fstat-no" title="function not covered" ></span>
+  startRandomMotionOnce(name, prio<span class="cstat-no" title="statement not covered" >rity)</span> {
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.startRandomMotionOnce(name, priority);</span>
+    });
+  }<span class="fstat-no" title="function not covered" ></span>
+  stopRandomMotion<span class="cstat-no" title="statement not covered" >() {</span>
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.stopRandomMotion();</span>
+    });
+  }<span class="fstat-no" title="function not covered" ></span>
+  startMotion(name, no, priority) {<span class="cstat-no" title="statement not covered" ></span>
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.startMotion(name, no, priority);</span>
+    });
+  }<span class="fstat-no" title="function not covered" ></span>
+  playSound(filename, host='/<span class="cstat-no" title="statement not covered" >') {<span class="cstat-no" title="statement not covered" ></span></span>
+    th<span class="cstat-no" title="statement not covered" >is.onModelReady.push(()<span class="fstat-no" title="function not covered" > =</span>&gt; {</span>
+      th<span class="cstat-no" title="statement not covered" >is.model.playSound(filename, host);</span>
+    });
+  }
+&nbsp;
+  /* Event methods */<span class="fstat-no" title="function not covered" ></span>
+  hitTest(id, x, y) {
+    re<span class="cstat-no" title="statement not covered" >turn this.model.hitTest(id,</span>
+      this.viewMatrix.invertTransformX(this.deviceToScreen.transformX(x)),
+      this.viewMatrix.invertTransformY(this.deviceToScreen.transformY(y)));
+  }<span class="fstat-no" title="function not covered" ></span>
+  setViewPoint(x, y) {
+    th<span class="cstat-no" title="statement not covered" >is.dragMgr.setPoint(this.viewMatrix.invertTransformX(this.deviceToScreen.transformX(x)),</span>
+    this.viewMatrix.invertTransformY(this.deviceToScreen.transformY(y)));
+  }
+&nbsp;
+&nbsp;
+  /* Some raw methods of Live2D */<span class="fstat-no" title="function not covered" ></span>
+  getParamFloat(key) {
+    re<span class="cstat-no" title="statement not covered" >turn this.model.getLive2DModel().getParamFloat(key);</span>
+  }<span class="fstat-no" title="function not covered" ></span>
+  setParamFloat(key, value, we<span class="cstat-no" title="statement not covered" >ight=1) {</span>
+    th<span class="cstat-no" title="statement not covered" >is.model.getLive2DModel().setParamFloat(key, value, weight);</span>
+  }<span class="fstat-no" title="function not covered" ></span>
+  addToParamFloat(key, value, <span class="cstat-no" title="statement not covered" >weight=1) {</span>
+    th<span class="cstat-no" title="statement not covered" >is.model.getLive2DModel().addToParamFloat(key, value, weight);</span>
+  }<span class="fstat-no" title="function not covered" ></span>
+  multParamFloat(key, value, w<span class="cstat-no" title="statement not covered" >eight=1) {</span>
+    th<span class="cstat-no" title="statement not covered" >is.model.getLive2DModel().multParamFloat(key, value, weight);</span>
+  }<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+}
+<span class="cstat-no" title="statement not covered" >if (PIXI) {</span>
+<span class="cstat-no" title="statement not covered" >  PIXI.Live2DSprite = Live2DSprite;</span>
+} else {
+<span class="cstat-no" title="statement not covered" >  console.error('Error: Cannot find global variable `PIXI`, Live2D plguin will not be installed.');</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

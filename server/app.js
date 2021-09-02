@@ -46,9 +46,12 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '1mb' }));
 app.use(cookieParser());
 app.use(session({
-    secret: global.myAppConfig.sessionSecret,
-    name: 'wikimoe',
-    cookie: { maxAge: 60000 },
+    secret: 'card.pisa.world',
+    name: 'card.pisa.world',
+    cookie: {
+        maxAge: 60000,
+        secure: true
+    },
     resave: false,
     saveUninitialized: true,
 }));

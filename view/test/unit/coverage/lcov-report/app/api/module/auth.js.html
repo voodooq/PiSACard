@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/api/module/auth.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">app/api/module</a> auth.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export defaul<span class="cstat-no" title="statement not covered" >t function (api) {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    login (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("login", data);</span>
+    },
+    dailycard (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("dailycard", data);</span>
+    },
+    reg (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("reg", data);</span>
+    },
+    find (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("find", data);</span>
+    },
+    searchcard (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("searchcard", data);</span>
+    },
+    searchcardbytoken (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("searchcardbytoken", data);</span>
+    },
+    sendmail (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("sendmail", data);</span>
+    },
+    searchlog (data) {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      return api.post("searchlog", data);</span>
+    },<span class="fstat-no" title="function not covered" ></span>
+    login (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("login", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    userinfo (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("userinfo", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    shop (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("shop", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    logout (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("logout", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    news (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("news", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    marketchart (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("marketchart", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    marketsell (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("marketsell", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    marketbuy (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("marketbuy", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    battle (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("battle", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    battlecard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("battlecard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    decompose (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("decompose", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    decomposeitem (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("decomposeitem", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    wantcard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("wantcard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchwantcard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchwantcard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchbattleinfo (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchbattleinfo", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchcardlevel (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchcardlevel", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchuseritem (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchuseritem", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    rank () {
+<span class="cstat-no" title="statement not covered" >      return api.get("rank")</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    upgradecard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("upgradecard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    dailygetitem (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("dailygetitem", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    dailygetitemmenu (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("dailygetitemmenu", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    cardlevelchange (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("cardlevelchange", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchbattlelogs (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchbattlelogs", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    uploadcard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("uploadcard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    handbook (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("handbook", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchcrearchcard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchcrearchcard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchcardpackage (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchcardpackage", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchguesscard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchguesscard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    userguesscard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("userguesscard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    userpost (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("userpost", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    robotcheck (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("robotcheck", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    quest (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("quest", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    uploadtx (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("uploadtx", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    mysteriousFragmentShop (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("mysteriousFragmentShop", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchCardCount (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchCardCount", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchDailyCardChance (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchDailyCardChance", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchMarketCount (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchMarketCount", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    searchWantCardPackageCount (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("searchWantCardPackageCount", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    admincheckinstall () {
+<span class="cstat-no" title="statement not covered" >      return api.get("admin/checkinstall")</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    admininstall (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/install", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminLogin (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/login", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminsetting (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/setting", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    admingivestar (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/givestar", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminsearchuser (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/searchuser", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminban (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/ban", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminpasswordchange (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/passwordchange", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminlogout (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/logout", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminsecretkey (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/secretkey", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminSearchlog (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/searchlog", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminNews (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/news", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    renamecardpackage (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/renamecardpackage", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminCreatcard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/creatcard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminSearchcard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/searchcard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminEditcard (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/editcard", data)</span>;
+    },<span class="fstat-no" title="function not covered" ></span>
+    adminSetRobotRate (data) {
+<span class="cstat-no" title="statement not covered" >      return api.post("admin/setrobotrate", data)</span>;
+    }
+  };
+}<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 01 2021 14:04:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

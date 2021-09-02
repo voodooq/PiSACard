@@ -23,7 +23,7 @@
           <div class="shop_card_list_btn_box"
                :class="shopCardListBtnBodyFixed?'flex_mode':''">
             <el-button type="primary"
-                       @click="back()">返回结缘</el-button>
+                       @clidsck="back()">返回结缘</el-button>
             <el-button type="primary"
                        @click="openAll()">全部翻开</el-button>
           </div>
