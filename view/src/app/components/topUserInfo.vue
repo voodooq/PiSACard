@@ -11,6 +11,20 @@
         <span><span class="wm_top_info_star">★</span>{{ userData.star || "0" }}</span>
       </div>
     </div>
+    <div class="fl">
+      <img class="wm_top_info_avatar_pic"
+           :src="'/static/img/pi.png'"
+           @click="inputPi()" />
+    </div>
+    <div class="fl" @click="inputPi()">
+      <div><span>注入信仰</span></div>
+    </div>
+    <form id="depositForm" name="depositForm" method="POST">
+      <input type="hidden"  name="txd" id="txd"/>
+      <input type="hidden"  name="pyd" id="pyd"/>
+      <input type="hidden" name="pi_username" value="" class="textbox" id="pi_username"/>
+      <input type="hidden" name="pi_amount" id="pi_amount" value="" class="textbox" size="20" />
+    </form>
     <div class="fr wm_topuserinfo_logout"
          @click="openMenu = true">导航</div>
     <div class="fr"><i class="el-icon-warning-outline"
@@ -153,7 +167,8 @@ import { authApi } from "../api";
 import cardData from "../../utils/cardData";
 import menuView from "./menu.vue";
 import * as PIXI from "pixi.js";
-import moment from "moment"
+import moment from "moment";
+import { createPiPayment, authenticatePiUser, openPiShareDialog } from '../service/pi';
 
 export default {
   data () {
@@ -382,6 +397,25 @@ export default {
     openMore () {
       if (this.userData.md5) {
         this.dialogVisible = true;
+      }
+    },
+    inputPi:function () {
+      if (typeof window.Pi === 'undefined') {
+        alert('请在Pi Browser，Pi浏览器中使用')
+      } else {
+        createPiPayment({
+          amount: 3.14,
+          memo: 'buy starts with pi',
+          metadata: {
+            orderId: 123
+          }
+        });
+        if (isDev) {
+          this.$message({
+            message: "支付成功！",
+            type: "success"
+          });
+        }
       }
     },
     getUserInfo () {

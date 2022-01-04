@@ -1,8 +1,8 @@
 {
-  "name": "PisaCard",
+  "name": "wikimoe-card",
   "version": "2.12.0",
-  "description": "Pisa卡牌Vue版",
-  "author": "tiger103 <tiger103.cn@gmail.com>",
+  "description": "维基萌抽卡vue版",
+  "author": "hiroki <eeg1412@gmail.com>",
   "private": true,
   "scripts": {
     "predll": "shx rm -rf ./build/dll",

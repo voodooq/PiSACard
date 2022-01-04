@@ -274,7 +274,7 @@ module.exports = async function (req, res, next) {
         const $ = cheerio.load(fs.readFileSync('public/index.html', 'utf8'), { decodeEntities: false });
         const footerHTML = fs.readFileSync('templete/footer.html', 'utf8');
         $('#wm_index_footer').html(footerHTML);
-        $('title').text(global.myAppConfig.browserTitle || "维基萌抽卡");
+        $('title').text(global.myAppConfig.browserTitle || "PiSA 卡牌");
         fs.writeFileSync("public/index.html", $.html());
         fs.writeFileSync('./data/hiddenWords.txt', config_.hiddenWords || "", 'utf8');
         res.send({

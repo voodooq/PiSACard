@@ -520,11 +520,11 @@ exports.doDemining = async (
     }
     let addToolTime = 0
     if (useTool == 0) {
-      addToolTime = 60 * 10
-    } else if (useTool == 1) {
       addToolTime = 60 * 30
-    } else if (useTool == 2) {
+    } else if (useTool == 1) {
       addToolTime = 60 * 60
+    } else if (useTool == 2) {
+      addToolTime = 60 * 120
     } else {
       console.info(chalk.yellow('使用错误的稿子参数'))
       return sendData

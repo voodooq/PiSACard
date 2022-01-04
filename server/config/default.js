@@ -4,7 +4,7 @@ function configData() {
     port: 3000, //网页端口
     https: false, //是否开启https,
     sslPort: 667, //https端口
-    site: 'http://127.0.0.1:3000', //站点域名
+    site: 'https://127.0.0.1:3000', //站点域名
     keyFileSrc: './bin/card.pisa.world.key', //私钥文件路径
     certFileSrc: './bin/card.pisa.world.pem', //证书文件路径
     url: 'mongodb://localhost:27017/PiSACard2021', //mongoDB地址

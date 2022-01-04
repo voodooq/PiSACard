@@ -22,10 +22,10 @@ module.exports = async function (req, res, next) {
         });
         return false;
     }
-
-    let jpgReg = new RegExp("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/");
+    let jpgReg = new RegExp("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/|data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/");
+    //console.info('imgBase64:'+imgBase64);
     let isJpg = jpgReg.test(imgBase64);
-    if (imgBase64.length > 11000) {
+    if (imgBase64.length > 15000) {
         res.send({
             code: 0,
             msg: '图像体积过大，头像上传失败！'

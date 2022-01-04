@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="京奥体育（数据库服务器）" uuid="ef4a3f4e-0aa2-4529-9b99-2ca94e5a7695">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://121.89.205.219:3306</jdbc-url>
+    </data-source>
+  </component>
+</project>

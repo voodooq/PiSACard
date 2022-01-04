@@ -82,7 +82,8 @@ module.exports = async function (req, res, next) {
         });
         return false;
     }
-    let jpgReg = new RegExp("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/");
+    let jpgReg = new RegExp("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/|data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/");
+    //console.info('imgBase64:'+imgBase64);
     let isJpg = jpgReg.test(imgBase64);
     if (!isJpg) {
         res.send({
